@@ -1,0 +1,10 @@
+.expItem{
+    display: flex;
+}
+.expItem__Titulo{
+    margin-top: 0;
+}
+.expItem__Img{
+    width: 200px;
+    height: 200px;
+}

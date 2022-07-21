@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --primary_color: black ;
+    --primary_color--hover: rgba(255, 255, 255, 0.351);
+    --text_color:#fff;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+img{
+    height: 100%;
+}
+.imgContainer{
+    overflow: hidden;
+}
+.sectionItemContainer{
+    margin: 0 auto;
+    width: 80%;
+}
+.section__Titulo{
+    margin-left: 5%;
+}
