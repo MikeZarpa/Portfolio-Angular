@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Proyecto } from 'src/app/mis-classes/models/proyecto';
 
 @Component({
   selector: 'app-proyectos',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProyectosComponent implements OnInit {
 
+  @Input() proyectos!:Array<Proyecto>;
   constructor() { }
 
   ngOnInit(): void {
