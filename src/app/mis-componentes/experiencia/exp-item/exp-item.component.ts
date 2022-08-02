@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Experiencia } from 'src/app/mis-classes/models/experiencia';
 
 @Component({
   selector: 'app-exp-item',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exp-item.component.css']
 })
 export class ExpItemComponent implements OnInit {
+
+  @Input() experiencia!:Experiencia;
 
   constructor() { }
 

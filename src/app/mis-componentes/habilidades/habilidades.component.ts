@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import { Habilidad } from 'src/app/mis-classes/models/habilidad';
 
 @Component({
   selector: 'app-habilidades',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HabilidadesComponent implements OnInit {
 
+  @Input() habilidades!:Array<Habilidad>;
   constructor() { }
 
   ngOnInit(): void {
