@@ -1,12 +1,12 @@
 export class Usuario {
-    id!:String;
-    nombre!:String;
-    titulo!:String;
-    img_banner!:String|null;
-    img_perfil!:String|null;
-    resumenPerfil!:String;
+    id!:number|null;
+    nombre!:string;
+    titulo!:string;
+    img_banner!:string|null;
+    img_perfil!:string|null;
+    resumenPerfil!:string;
 
-    constructor(nombre:String,titulo:String,img_banner:String="",img_perfil:String="",resumenPerfil:String=""){
+    constructor(nombre:string,titulo:string,img_banner:string="",img_perfil:string="",resumenPerfil:string=""){
         this.nombre=nombre;
         this.titulo=titulo;
         this.img_banner=img_banner;

@@ -1,15 +1,15 @@
 interface IHabilidad{
-    id:BigInt;
-    nombre:String;
+    id:number;
+    nombre:string;
     porcentaje:number;
-    tipo:String;
+    tipo:string;
 }
 
 export class Habilidad {
-    public id:BigInt|null;
-    public nombre!:String;
+    public id:number|null;
+    public nombre!:string;
     public porcentaje!:number;
-    public tipo!:String;
+    public tipo!:string;
 
     constructor(habilidad?:IHabilidad){
         this.id=habilidad?.id ?? null;

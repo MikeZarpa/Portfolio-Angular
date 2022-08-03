@@ -1,17 +1,17 @@
 interface IEducacion{
-    id:BigInt|null;
-    lugarNombre:String;
-    carreraNombre:String;
-    periodo:String;
-    img_logo:String|null;
+    id:number|null;
+    lugarNombre:string;
+    carreraNombre:string;
+    periodo:string;
+    img_logo:string|null;
 }
 
 export class Educacion {
-    public id:BigInt|null;
-    public lugarNombre!:String;
-    public carreraNombre!:String;
-    public periodo!:String;
-    public img_logo:String|null;
+    public id:number|null;
+    public lugarNombre!:string;
+    public carreraNombre!:string;
+    public periodo!:string;
+    public img_logo:string|null;
 
     constructor(educacion?:IEducacion){
         this.id=educacion?.id ?? null;

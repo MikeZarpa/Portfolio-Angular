@@ -1,21 +1,19 @@
-import { timeStamp } from "console";
-
 interface IProyecto{
-    id:BigInt|null;
-    fecha:String;
-    nombre:String;
-    descripcion:String;
-    link:String;
-    img_logo:String|null;
+    id:number|null;
+    fecha:string;
+    nombre:string;
+    descripcion:string;
+    link:string;
+    img_logo:string|null;
 }
 
 export class Proyecto {
-    public id:BigInt|null;
-    public fecha!:String;
-    public nombre!:String;
-    public descripcion!:String;
-    public link!:String;
-    public img_logo:String|null;
+    public id:number|null;
+    public fecha!:string;
+    public nombre!:string;
+    public descripcion!:string;
+    public link!:string;
+    public img_logo:string|null;
 
     constructor(proyecto?:IProyecto){
         this.id=proyecto?.id ?? null;

@@ -8,7 +8,7 @@ import { Educacion } from 'src/app/mis-classes/models/educacion';
 })
 export class EducacionComponent implements OnInit {
 
-  @Input() educaciones!:Array<Educacion>;
+  @Input() educaciones:Array<Educacion>=[];
   constructor() { }
 
   ngOnInit(): void {
