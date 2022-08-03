@@ -1,17 +1,17 @@
 interface IExperiencia{
-    id:BigInt|null;
-    lugarNombre:String;
-    puestoNombre:String;
-    periodo:String;
-    descripcion:String;
+    id:number|null;
+    lugarNombre:string;
+    puestoNombre:string;
+    periodo:string;
+    descripcion:string;
 }
 
 export class Experiencia {
-    public id:BigInt|null;
-    public lugarNombre!:String;
-    public puestoNombre!:String;
-    public periodo!:String;
-    public descripcion!:String;
+    public id:number|null;
+    public lugarNombre!:string;
+    public puestoNombre!:string;
+    public periodo!:string;
+    public descripcion!:string;
 
     constructor(experiencia?:IExperiencia){
         this.id=experiencia?.id ?? null;

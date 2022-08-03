@@ -8,7 +8,7 @@ import { Experiencia } from 'src/app/mis-classes/models/experiencia';
 })
 export class ExperienciaComponent implements OnInit {
 
-  @Input() experiencias!:Array<Experiencia>;
+  @Input() experiencias:Array<Experiencia>=[];
   constructor() { }
 
   ngOnInit(): void {

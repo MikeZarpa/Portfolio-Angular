@@ -8,7 +8,7 @@ import { Habilidad } from 'src/app/mis-classes/models/habilidad';
 })
 export class HabilidadesComponent implements OnInit {
 
-  @Input() habilidades!:Array<Habilidad>;
+  @Input() habilidades:Array<Habilidad>=[];
   constructor() { }
 
   ngOnInit(): void {
