@@ -1,50 +1,6 @@
-:host{
-    display: block;
-    border: 1px solid red;
-    height: 300px   ;
+.navegacion{
+    height: 50px;
 }
-.navBar{
-    height: 40px;
-    display: flex;
-    justify-content: space-between;
-    user-select: none;
-    background-color: var(--primary_color);
-    color: var(--text_color);
-}
-.navBar__item{
-    display: flex;
-    align-items: center;
-}
-.argPrograma{
-    display: flex;
-    align-items: center;
-    height:100%;
-}
-.argPrograma__logo{
-    height: 100%;
-}
-.btn_loginContainer{
-    height: 100%;
-}
-.btn_login{
-    background-color: var(--primary_color);
-    border: none;
-    color: var(--text_color);
-    padding: 0px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    font-size: 16px;
-    box-sizing: border-box;
-    height: 100%;
-    position: relative;
-}
-.btn_login:hover{
-    background-color: var(--primary_color--hover);
-}
-
-.iconContainer{
-    display: flex;
-    height: 100%;
-    overflow: hidden;
+.banner{
+    height: 400px;
 }

@@ -12,6 +12,13 @@ export class SkillItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }  
+
+  styleBarProgress(){
+    let styleBarProgress = {
+      'width': this.habilidad.porcentaje+"%"
+    };
+    return styleBarProgress;
   }
 
 }

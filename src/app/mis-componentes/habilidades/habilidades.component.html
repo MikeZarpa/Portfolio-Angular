@@ -1,4 +1,14 @@
-<h2 class="section__Titulo">Habilidades Hard & Soft</h2>
-<div class="sectionItemContainer skillItemContainer">
-    <app-skill-item [habilidad]=habilidad *ngFor="let habilidad of habilidades"></app-skill-item>
+<div class="container-fluid bg-secondary bg-opacity-75 bg-gradient">
+    <div class="row"> 
+        <h2 class="offset-1 col mt-4">Habilidades Hard & Soft</h2>
+    </div>
+    <div class="row row-cols-1">
+        <div class="offset-1 col-10">            
+            <div class="row justify-content-evenly">
+                <div class="col col-auto mb-2" *ngFor="let habilidad of habilidades">
+                    <app-skill-item class="text-center" [habilidad]=habilidad></app-skill-item>
+                </div>        
+            </div>
+        </div>
+    </div>
 </div>

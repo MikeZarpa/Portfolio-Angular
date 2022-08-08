@@ -1,15 +1,18 @@
-<div>
-<div class="perfilContainer">
-    <div class="perfilContainer__Datos">
-        <div class="imgContainer imgPerfilContainer">
-            <img src="" alt="Foto de Perfil">
+<div class="container-fluid position-relative fotoPerfilUbicacion margenInferiorNegativo">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-3 ">
+            <div class="fotoPerfil mx-auto r">
+                <img class="img-height img-thumbnail rounded-circle" src="./assets/images/Foto_perfil.webp" alt="Foto de Perfil">
+            </div>
+            <p class="text-center fs-2">{{usuario.nombre}}</p>
+            <p class="text-center text-muted fs-4">{{usuario.titulo}}</p>
         </div>
-        <p class="perfilContainer__Datos-Nombre">{{usuario.nombre}}</p>
-        <p class="perfilContainer__Datos-Titulo">{{usuario.titulo}}</p>
+        <div class="col-4">
+            <div class="espaciadoPerfil"></div>
+            <p class="fs-1">Sobre mi</p>
+            <p class="fs-3">{{usuario.resumenPerfil}}</p>
+        </div>
+        <div class="col"></div>
     </div>
-    <div class="perfilContainer__Descripcion">
-        <p class="perfilContainer__Descripcion-Titulo">Sobre mi</p>
-        <p>{{usuario.resumenPerfil}}</p>
-    </div>
-</div>
 </div>

@@ -16,6 +16,7 @@ import { ExpItemComponent } from './mis-componentes/experiencia/exp-item/exp-ite
 import { EduItemComponent } from './mis-componentes/educacion/edu-item/edu-item.component';
 import { SkillItemComponent } from './mis-componentes/habilidades/skill-item/skill-item.component';
 import { ProyectoItemComponent } from './mis-componentes/proyectos/proyecto-item/proyecto-item.component';
+import { EditBtnComponent } from './mis-componentes/buttons/edit-btn/edit-btn.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProyectoItemComponent } from './mis-componentes/proyectos/proyecto-item
     ExpItemComponent,
     EduItemComponent,
     SkillItemComponent,
-    ProyectoItemComponent
+    ProyectoItemComponent,
+    EditBtnComponent
   ],
   imports: [
     //añadimos el modulo HttpClient al array de imports

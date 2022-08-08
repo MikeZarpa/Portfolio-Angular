@@ -1,10 +1,13 @@
-<div class="eduItem">
-    <div class="imgContainer eduItem__Img">
-        <img src="" alt="Logo de Educación">
-    </div>
-    <div class="eduItem__Descripcion">
-        <h3 class="eduItem__Titulo">{{educacion.lugarNombre}}</h3>
-        <p>{{educacion.carreraNombre}}</p>
-        <p>{{educacion.periodo}}</p>
+<div class="container-fluid mt-2">
+    <div class="row">
+        <div class="offset-1 col-2">
+            <img src="" alt="Logo de Educación">
+        </div>
+        <div class="col">
+            <h3 class="fs-3">{{educacion.carreraNombre}}</h3>
+            <p>Lugar {{educacion.lugarNombre}}</p>            
+            <p>Periodo: {{educacion.periodo}}</p>
+            <p>Estado: educacion.estado</p>
+        </div>
     </div>
 </div>
