@@ -1,2 +1,16 @@
-<p>{{habilidad.nombre}}</p>
-<p>{{habilidad.porcentaje}}</p>
+<div class="card mb-3 user-select-none" style="width: 18rem;">
+    <div class="card-body">
+        <div class="row">
+            <h5 class="card-title">{{habilidad.nombre}}</h5>
+        </div>
+        <div class="progress">
+            <div 
+            class="progress-bar bg-primary"
+            [ngClass]="
+            {'bg-opacity-75' : (habilidad.porcentaje >=65 && habilidad.porcentaje < 80),
+             'bg-opacity-50' : (habilidad.porcentaje >=40 && habilidad.porcentaje < 65),
+             'bg-opacity-25' : (habilidad.porcentaje >= 0 && habilidad.porcentaje < 40)}"
+            [ngStyle]="styleBarProgress()"></div>
+        </div>
+    </div>
+</div>

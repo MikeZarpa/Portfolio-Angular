@@ -1,42 +1,14 @@
-.perfilContainer{
-    display: flex;
-    justify-content:space-between;
-    width: 80%;
-    margin: 0 auto;
-    border: 1px solid blue;
+.fotoPerfil{
+    --size:15rem;
+    height: var(--size);
+    width: var(--size);
 }
-.imgPerfilContainer{
-    width: 150px;
-    height: 150px;
-    border: 1px solid purple;
-    overflow: hidden;
-    border-radius: 50%;
+.fotoPerfilUbicacion{
+    top: -7rem;
 }
-.perfilContainer__Datos{
-    position: relative;
-    margin-left: 10%;
-    border:1px solid salmon;
-    text-align: center;
-    bottom: 50px;
+.espaciadoPerfil{
+    height: 7rem;
 }
-
-.perfilContainer__Datos p{
-    font-weight: bold;
-    margin: 5px 0;
-}
-.perfilContainer__Datos-Nombre{    
-    font-size: 1.5em;
-}
-.perfilContainer__Datos-Titulo{
-    font-size: 1em;
-}
-.perfilContainer__Descripcion{
-    margin-right: 50%;
-    border:1px solid salmon;
-    text-align: center;
-    bottom: 50px;
-}
-.perfilContainer__Descripcion-Titulo{
-    font-size: 1.5em;
-    font-weight: bold;
+.margenInferiorNegativo{
+    margin-bottom: -5rem;
 }

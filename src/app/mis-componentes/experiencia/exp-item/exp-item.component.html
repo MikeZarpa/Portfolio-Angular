@@ -1,11 +1,14 @@
-<div class="expItem">
-    <div class="imgContainer expItem__Img">
-        <img src="" alt="Logo de Experiencia">
-    </div>
-    <div class="expItem__Descripcion">
-        <h3 class="expItem__Titulo">{{experiencia.lugarNombre}}</h3>
-        <p>{{experiencia.puestoNombre}}</p>
-        <p>{{experiencia.periodo}}</p>
-        <p>{{experiencia.descripcion}}</p>
+<div class="container-fluid mt-2">
+    <div class="row">
+        <div class="offset-1 col-2">
+            <img src="" alt="Logo de Experiencia">
+        </div>
+        <div class="col">
+            <h3 class="fs-3">{{experiencia.puestoNombre}}</h3>
+            <p>Lugar: {{experiencia.lugarNombre}}</p>            
+            <p>Periodo: {{experiencia.periodo}}</p>
+            <p>Descripción de las tareas:</p>
+            <p class="offset-1">{{experiencia.descripcion}}</p>
+        </div>
     </div>
 </div>
