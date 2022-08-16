@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class DeleteBtnComponent implements OnInit {
 
-  @Input() mostrar:boolean=false;
+  @Input() visible:boolean=false;
   @Output() onClick = new EventEmitter<string>();
 
   constructor() { }

@@ -8,7 +8,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 export class EditBtnComponent implements OnInit {
 
-  @Input() mostrar:boolean=false;
+  @Input() visible:boolean=false;
   @Output() onClick = new EventEmitter<string>();
   constructor() { }
 

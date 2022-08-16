@@ -5,10 +5,21 @@
     <div class="row row-cols-1">
         <div class="offset-1 col-10">            
             <div class="row justify-content-evenly">
-                <div class="col col-auto mb-2" *ngFor="let habilidad of habilidades">
-                    <app-skill-item class="text-center" [habilidad]=habilidad></app-skill-item>
+                <div class="col col-auto mb-2" *ngFor="let habilidad of itemsList">
+                    <app-skill-item
+                    (save)="addListSave($event)"
+                    (delete)="addListDelete($event)"
+                    (autoDelete)="removeItem($event)"
+                    [modoEdicion]="modoEdicion"
+                    class="text-center" [item]=habilidad></app-skill-item>
                 </div>        
             </div>
         </div>
     </div>
+    <app-footer-edit-save
+        [visible]="modoEdicion"
+        [visibleSave]="hayCambiosQueGuardar()"
+        (newItem)="addNewItemToList()"
+        (guardar)="saveAll()"
+        (cancelar)="cancelAll()"></app-footer-edit-save>
 </div>

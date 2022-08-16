@@ -1,16 +1,39 @@
 <div class="card mb-3 user-select-none" style="width: 18rem;">
+    <div class="card-header py-0">
+        <app-header-edit-btns 
+            (edit)="comenzarAEditar()"
+            (delete)="borrar()"
+            [visible]="modoEdicion&&!editando"></app-header-edit-btns></div>
     <div class="card-body">
         <div class="row">
-            <h5 class="card-title">{{habilidad.nombre}}</h5>
+            <h5 class="card-title">{{item.nombre}}</h5>
         </div>
+        <div *ngIf="editando" class="row">
+            <input class="col mb-3 mx-2" type="text"
+                #inputNombre
+                [value]="item.nombre"
+                (keyup)="cambiandoNombre(inputNombre.value)" name="" id=""></div>
         <div class="progress">
             <div 
             class="progress-bar bg-primary"
             [ngClass]="
-            {'bg-opacity-75' : (habilidad.porcentaje >=65 && habilidad.porcentaje < 80),
-             'bg-opacity-50' : (habilidad.porcentaje >=40 && habilidad.porcentaje < 65),
-             'bg-opacity-25' : (habilidad.porcentaje >= 0 && habilidad.porcentaje < 40)}"
+            {'bg-opacity-75' : (item.porcentaje >=65 && item.porcentaje < 80),
+             'bg-opacity-50' : (item.porcentaje >=40 && item.porcentaje < 65),
+             'bg-opacity-25' : (item.porcentaje >= 0 && item.porcentaje < 40)}"
             [ngStyle]="styleBarProgress()"></div>
+        </div>
+        <div *ngIf="editando" class="row my-2">
+            <input class="col mx-2" type="number"
+                #inputPorcentaje
+                [value]="item.porcentaje"
+                min="0" max="100"
+                oninput="javascript: if (this.value>100) this.value = 100; if(this.value<0) this.value=0"
+                (change)="cambiandoPorcentaje(inputPorcentaje.value)"
+                (keyup)="cambiandoPorcentaje(inputPorcentaje.value)"
+                 name="" id=""></div>
+        <div *ngIf="editando">
+            <button class="btn btn-success m-1 mt-0 " (click)="guardarCambios()">Guardar Cambios</button>
+            <button class="btn btn-secondary m-1 mt-0" (click)="cancel()">Cancelar</button>
         </div>
     </div>
 </div>

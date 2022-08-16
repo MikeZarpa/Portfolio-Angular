@@ -7,7 +7,9 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class FooterEditSaveComponent implements OnInit {
 
-  @Input() mostrar=true;
+  @Input() visible=true;
+  @Input() visibleSave=true;
+  @Output() newItem= new EventEmitter<string>();
   @Output() guardar= new EventEmitter<string>();
   @Output() cancelar= new EventEmitter<string>();
 
@@ -22,4 +24,8 @@ export class FooterEditSaveComponent implements OnInit {
   guardarEvent(){
     this.guardar.emit();
   }
+  newItemEvent(){
+    this.newItem.emit();
+  }
+
 }
