@@ -3,6 +3,11 @@
     <app-acerca-de [usuario]=usuario></app-acerca-de>
     <app-experiencia [experiencias]=usuario.experiencias></app-experiencia>
     <app-educacion [educaciones]=usuario.educaciones></app-educacion>
-    <app-habilidades [habilidades]=usuario.habilidades></app-habilidades>
+    <app-habilidades
+        (saveEvent)="saveHabilidades($event)"
+        (deleteEvent)="deleteHabilidades($event)"
+        (resetEvent)="resetHabilidades()"
+        [modoEdicion]=true
+        [itemsList]=usuario.habilidades></app-habilidades>
     <app-proyectos [proyectos]=usuario.proyectos></app-proyectos>
 </div>

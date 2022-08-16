@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Educacion } from './mis-classes/models/educacion';
+import { Habilidad } from './mis-classes/models/habilidad';
 import { UsuarioDTO } from './mis-classes/modelsDTO/usuario-dto';
 import { PerfilService } from './mis-servicios/PerfilService/perfil.service';
 
@@ -28,11 +29,11 @@ export class AppComponent {
     ];
 
     this.usuario.habilidades=[
-      {id:null,nombre:"Habilidad 1 -20",porcentaje:20,tipo:"Hard"},
-      {id:null,nombre:"Habilidad 2 -40",porcentaje:40,tipo:"Soft"},
-      {id:null,nombre:"Habilidad 3 -60",porcentaje:60,tipo:"Hard"},
-      {id:null,nombre:"Habilidad 4 -80",porcentaje:80,tipo:"Soft"},
-      {id:null,nombre:"Habilidad 5 -100",porcentaje:100,tipo:"Hard"}]
+      new Habilidad({id:null,nombre:"Habilidad 1 -20",porcentaje:20,tipo:"Hard"}),
+      new Habilidad({id:null,nombre:"Habilidad 2 -40",porcentaje:40,tipo:"Soft"}),
+      new Habilidad({id:null,nombre:"Habilidad 3 -60",porcentaje:60,tipo:"Hard"}),
+      new Habilidad({id:null,nombre:"Habilidad 4 -80",porcentaje:80,tipo:"Soft"}),
+      new Habilidad({id:null,nombre:"Habilidad 5 -100",porcentaje:100,tipo:"Hard"})]
 
     this.usuario.proyectos=[
       {id:null,fecha:"Fecha 1",nombre:"Proyecto 1",descripcion:"Descripción del proyecto",img_logo:null,link:"https://www.google.com"},
@@ -46,4 +47,15 @@ export class AppComponent {
   }
   ngOnInit(): void {
   }
+
+  saveHabilidades(habilidades:Array<Habilidad>){
+    this.perfilService.saveHabilidad(habilidades);
+  }
+  deleteHabilidades(ids:Array<number>){
+    this.perfilService.borrarHabilidad(ids);
+  }
+  resetHabilidades(){
+    this.perfilService.obtenerUsuario().subscribe(res=>{this.usuario.habilidades=res.habilidades;});
+  }
+
 }

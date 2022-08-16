@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class HeaderEditBtnsComponent implements OnInit {
 
-  @Input() mostrar=false;
+  @Input() visible=true;
   @Output() delete = new EventEmitter<string>();
   @Output() edit = new EventEmitter<string>();
 

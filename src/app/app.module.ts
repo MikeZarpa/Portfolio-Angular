@@ -16,7 +16,10 @@ import { ExpItemComponent } from './mis-componentes/experiencia/exp-item/exp-ite
 import { EduItemComponent } from './mis-componentes/educacion/edu-item/edu-item.component';
 import { SkillItemComponent } from './mis-componentes/habilidades/skill-item/skill-item.component';
 import { ProyectoItemComponent } from './mis-componentes/proyectos/proyecto-item/proyecto-item.component';
-import { EditBtnComponent } from './mis-componentes/buttons/edit-btn/edit-btn.component';
+import { HeaderEditBtnsComponent } from './mis-componentes/edicion/header-edit-btns/header-edit-btns.component';
+import { DeleteBtnComponent } from './mis-componentes/edicion/buttons/delete-btn/delete-btn.component';
+import { EditBtnComponent } from './mis-componentes/edicion/buttons/edit-btn/edit-btn.component';
+import { FooterEditSaveComponent } from './mis-componentes/edicion/footer-edit-save/footer-edit-save.component';
 
 @NgModule({
   declarations: [
@@ -32,10 +35,13 @@ import { EditBtnComponent } from './mis-componentes/buttons/edit-btn/edit-btn.co
     EduItemComponent,
     SkillItemComponent,
     ProyectoItemComponent,
-    EditBtnComponent
+    EditBtnComponent,
+    DeleteBtnComponent,
+    HeaderEditBtnsComponent,
+    FooterEditSaveComponent
   ],
   imports: [
-    //añadimos el modulo HttpClient al array de imports
+    //añadimos el modulo HttpClient al array de imports para los servidores
     HttpClientModule,
     BrowserModule,
     AppRoutingModule
