@@ -58,16 +58,18 @@ export class ControlDeEdicion<t extends ComponentItem<t>> {
         if(this.listDelete.length>0){
             this.deleteEvent.emit(this.listDelete);
         }
-        this.cancelAll();
+        this.resetList();
     }
 
     //Reinicia los cambios
     cancelAll(){
-        this.listSave=[];
-        this.listDelete=[];
+        this.resetList();
         this.resetEvent.emit();
     }
-
+    resetList(){
+        this.listSave=[];
+        this.listDelete=[];
+    }
     hayCambiosQueGuardar():boolean{
         return (this.listSave.length>0 || this.listDelete.length>0)
     }

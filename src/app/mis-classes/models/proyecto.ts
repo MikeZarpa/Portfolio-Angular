@@ -1,3 +1,5 @@
+import { ComponentItem } from "./component-item";
+
 interface IProyecto{
     id:number|null;
     fecha:string;
@@ -7,7 +9,7 @@ interface IProyecto{
     img_logo:string|null;
 }
 
-export class Proyecto {
+export class Proyecto implements ComponentItem<Proyecto> {
     public id:number|null;
     public fecha!:string;
     public nombre!:string;
@@ -23,4 +25,22 @@ export class Proyecto {
         this.link=proyecto?.link!;
         this.img_logo=proyecto?.img_logo ?? null;
     };
+    cambiarValores(item: Proyecto): void {
+        this.id=item.id;
+        this.fecha=item.fecha;
+        this.nombre=item.nombre;
+        this.descripcion=item.descripcion;
+        this.link=item.link;
+        this.img_logo=item.img_logo;
+    }
+    nuevaInstancia(): Proyecto {
+        return new Proyecto({
+            id:null,
+            fecha:"Nueva Fecha Proyecto",
+            nombre:"Nuevo Proyecto",
+            descripcion:"Nueva descripción del Proyecto",
+            link:"Direccion del proyecto (https://...) ",
+            img_logo:null
+        });
+    }
 }

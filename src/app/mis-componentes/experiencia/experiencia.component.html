@@ -3,6 +3,19 @@
         <h2 class="offset-1 col mt-4">Experiencia</h2>
     </div> 
     <div class="offset-1">
-        <app-exp-item [experiencia]=experiencia *ngFor="let experiencia of experiencias"></app-exp-item>
+        <app-exp-item
+            (save)="addListSave($event)"
+            (delete)="addListDelete($event)"
+            (autoDelete)="removeItem($event)"
+            [itemGenerator]="itemGenerator"
+            [item]=experiencia
+            [modoEdicion]="modoEdicion"
+            *ngFor="let experiencia of itemsList"></app-exp-item>
     </div>
+    <app-footer-edit-save
+        [visible]="modoEdicion"
+        [visibleSave]="hayCambiosQueGuardar()"
+        (newItem)="addNewItemToList()"
+        (guardar)="saveAll()"
+        (cancelar)="cancelAll()"></app-footer-edit-save>
 </div>

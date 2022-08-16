@@ -1,13 +1,28 @@
 <div>    
     <app-header></app-header>
     <app-acerca-de [usuario]=usuario></app-acerca-de>
-    <app-experiencia [experiencias]=usuario.experiencias></app-experiencia>
-    <app-educacion [educaciones]=usuario.educaciones></app-educacion>
+    <app-experiencia
+        (saveEvent)="saveExperiencias($event)"
+        (deleteEvent)="deleteExperiencias($event)"
+        (resetEvent)="resetExperiencias()"
+        [modoEdicion]=modoEdicion
+        [itemsList]=usuario.experiencias></app-experiencia>
+    <app-educacion
+        (saveEvent)="saveEducaciones($event)"
+        (deleteEvent)="deleteEducaciones($event)"
+        (resetEvent)="resetEducaciones()"
+        [modoEdicion]=modoEdicion
+        [itemsList]=usuario.educaciones></app-educacion>
     <app-habilidades
         (saveEvent)="saveHabilidades($event)"
         (deleteEvent)="deleteHabilidades($event)"
         (resetEvent)="resetHabilidades()"
-        [modoEdicion]=true
+        [modoEdicion]=modoEdicion
         [itemsList]=usuario.habilidades></app-habilidades>
-    <app-proyectos [proyectos]=usuario.proyectos></app-proyectos>
+    <app-proyectos
+        (saveEvent)="saveProyectos($event)"
+        (deleteEvent)="deleteProyectos($event)"
+        (resetEvent)="resetProyectos()"
+        [modoEdicion]=modoEdicion
+        [itemsList]=usuario.proyectos></app-proyectos>
 </div>
