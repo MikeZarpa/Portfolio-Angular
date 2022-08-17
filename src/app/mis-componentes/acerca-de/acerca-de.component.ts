@@ -10,7 +10,7 @@ import { EdicionItem } from 'src/app/mis-classes/paraEdicion/edicion-item';
 export class AcercaDeComponent extends EdicionItem<Usuario> implements OnInit {
   constructor() {
     super()
-    this.itemGenerator=new Usuario("","");
+    this.itemGenerator=new Usuario();
   }
   override ngOnInit(): void {
     //Para que no intente activar el modoEdicion al iniciar
@@ -32,5 +32,6 @@ export class AcercaDeComponent extends EdicionItem<Usuario> implements OnInit {
 
   saveUsuario(){
     this.save.emit(this.item);
+    this.editando=false;
   }
 }
