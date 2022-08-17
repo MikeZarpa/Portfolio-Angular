@@ -10,6 +10,7 @@ export class HeaderEditBtnsComponent implements OnInit {
   @Input() visible=true;
   @Output() delete = new EventEmitter<string>();
   @Output() edit = new EventEmitter<string>();
+  @Input() onlyEdit=false;
 
   constructor() { }
 

@@ -9,4 +9,13 @@ export class UsuarioDTO extends Usuario {
     experiencias:Array<Experiencia>=[];
     proyectos:Array<Proyecto>=[];
     educaciones:Array<Educacion>=[];
+
+    constructor(usuario:Usuario){
+        super(usuario.nombre,usuario.titulo,"","",usuario.resumenPerfil);
+        this.id=usuario.id;
+    }
+    
+    nuevaInstanciaDTO(usuarioDTO:UsuarioDTO): UsuarioDTO {
+        return new UsuarioDTO(usuarioDTO);
+    }
 }

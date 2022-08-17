@@ -1,18 +1,44 @@
 <div class="container-fluid position-relative fotoPerfilUbicacion margenInferiorNegativo">
+    <app-header-edit-btns 
+        (edit)="comenzarAEditar()"
+        [onlyEdit]="true"
+        [visible]="modoEdicion&&!editando"></app-header-edit-btns>
     <div class="row">
         <div class="col"></div>
         <div class="col-3 ">
             <div class="fotoPerfil mx-auto r">
                 <img class="img-height img-thumbnail rounded-circle" src="./assets/images/Foto_perfil.webp" alt="Foto de Perfil">
             </div>
-            <p class="text-center fs-2">{{usuario.nombre}}</p>
-            <p class="text-center text-muted fs-4">{{usuario.titulo}}</p>
+            <p class="text-center fs-2">{{item.nombre}}</p>
+            <div *ngIf="editando" class="row">
+                <input class="col mb-3 ms-2 me-5" type="text"
+                    #inputNombre
+                    [value]="item.nombre"
+                    (keyup)="cambiandoNombre(inputNombre.value)" name="" id=""></div>
+
+            <p class="text-center text-muted fs-4">{{item.titulo}}</p>
+            <div *ngIf="editando" class="row">
+                <input class="col mb-3 ms-2 me-5" type="text"
+                    #inputTitulo
+                    [value]="item.titulo"
+                    (keyup)="cambiandoTitulo(inputTitulo.value)" name="" id=""></div>
         </div>
         <div class="col-4">
             <div class="espaciadoPerfil"></div>
             <p class="fs-1">Sobre mi</p>
-            <p class="fs-3">{{usuario.resumenPerfil}}</p>
+            <p class="fs-3">{{item.resumenPerfil}}</p>
+            <div *ngIf="editando" class="row">
+                <input class="col mb-3 ms-2 me-5" type="text"
+                    #inputResumen
+                    [value]="item.resumenPerfil"
+                    (keyup)="cambiandoResumen(inputResumen.value)" name="" id=""></div>
         </div>
         <div class="col"></div>
     </div>
+    <app-footer-edit-save
+        [visible]="modoEdicion"
+        [onlySaveAndCancel]="true"
+        [visibleSave]="hayCambiosQueGuardar()"
+        (guardar)="saveUsuario()"
+        (cancelar)="cancel()"></app-footer-edit-save>
 </div>

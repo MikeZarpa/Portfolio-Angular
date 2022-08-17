@@ -1,28 +1,31 @@
 <div>    
     <app-header></app-header>
-    <app-acerca-de [usuario]=usuario></app-acerca-de>
+    <app-acerca-de
+        (save)="saveUsuario($event)"
+        [modoEdicion]=modoEdicion
+        [item]=usuarioDTO></app-acerca-de>
     <app-experiencia
         (saveEvent)="saveExperiencias($event)"
         (deleteEvent)="deleteExperiencias($event)"
         (resetEvent)="resetExperiencias()"
         [modoEdicion]=modoEdicion
-        [itemsList]=usuario.experiencias></app-experiencia>
+        [itemsList]=usuarioDTO.experiencias></app-experiencia>
     <app-educacion
         (saveEvent)="saveEducaciones($event)"
         (deleteEvent)="deleteEducaciones($event)"
         (resetEvent)="resetEducaciones()"
         [modoEdicion]=modoEdicion
-        [itemsList]=usuario.educaciones></app-educacion>
+        [itemsList]=usuarioDTO.educaciones></app-educacion>
     <app-habilidades
         (saveEvent)="saveHabilidades($event)"
         (deleteEvent)="deleteHabilidades($event)"
         (resetEvent)="resetHabilidades()"
         [modoEdicion]=modoEdicion
-        [itemsList]=usuario.habilidades></app-habilidades>
+        [itemsList]=usuarioDTO.habilidades></app-habilidades>
     <app-proyectos
         (saveEvent)="saveProyectos($event)"
         (deleteEvent)="deleteProyectos($event)"
         (resetEvent)="resetProyectos()"
         [modoEdicion]=modoEdicion
-        [itemsList]=usuario.proyectos></app-proyectos>
+        [itemsList]=usuarioDTO.proyectos></app-proyectos>
 </div>
