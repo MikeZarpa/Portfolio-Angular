@@ -9,6 +9,7 @@ export class FooterEditSaveComponent implements OnInit {
 
   @Input() visible=true;
   @Input() visibleSave=true;
+  @Input() onlySaveAndCancel=false;
   @Output() newItem= new EventEmitter<string>();
   @Output() guardar= new EventEmitter<string>();
   @Output() cancelar= new EventEmitter<string>();

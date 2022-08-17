@@ -1,13 +1,38 @@
 <div class="container-fluid mt-2">
+    <app-header-edit-btns 
+        (edit)="comenzarAEditar()"
+        (delete)="borrar()"
+        [visible]="modoEdicion&&!editando"></app-header-edit-btns>
     <div class="row">
         <div class="offset-1 col-2">
             <img src="" alt="Logo de Educación">
         </div>
         <div class="col">
-            <h3 class="fs-3">{{educacion.carreraNombre}}</h3>
-            <p>Lugar {{educacion.lugarNombre}}</p>            
-            <p>Periodo: {{educacion.periodo}}</p>
-            <p>Estado: educacion.estado</p>
+            <h3 class="fs-3">{{item.carreraNombre}}</h3>
+            <div *ngIf="editando" class="row">
+                <input class="col mb-3 ms-2 me-5" type="text"
+                    #inputCarrera
+                    [value]="item.carreraNombre"
+                    (keyup)="cambiandoCarrera(inputCarrera.value)" name="" id=""></div>
+            <p>Lugar {{item.lugarNombre}}</p>
+            <div *ngIf="editando" class="row">
+                <input class="col mb-3 ms-2 me-5" type="text"
+                    #inputLugar
+                    [value]="item.lugarNombre"
+                    (keyup)="cambiandoLugar(inputLugar.value)" name="" id=""></div>            
+            <p>Periodo: {{item.periodo}}</p>
+            <div *ngIf="editando" class="row">
+                <input class="col mb-3 ms-2 me-5" type="text"
+                    #inputPeriodo
+                    [value]="item.periodo"
+                    (keyup)="cambiandoPeriodo(inputPeriodo.value)" name="" id=""></div>
+            <p>Estado: item.estado</p>
+        </div>
+    </div>
+    <div class="row justify-content-center text-center" *ngIf="editando">
+        <div>
+            <button class="btn btn-success m-1 mt-0 " (click)="guardarCambios()">Guardar Cambios</button>
+            <button class="btn btn-secondary m-1 mt-0" (click)="cancel()">Cancelar</button>
         </div>
     </div>
 </div>

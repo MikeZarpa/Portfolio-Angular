@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { ComponentItem } from "../models/component-item";
 
 @Component({
@@ -16,9 +16,10 @@ Esta clase está pensada para usarse en interacción con un componente padre de 
 
 
 
-export class EdicionItem<t extends ComponentItem<t>> {
+export class EdicionItem<t extends ComponentItem<t>> implements OnInit {
 
     @Input() item!:t;
+    @Input() itemGenerator!:t;
     @Input() modoEdicion:boolean=false;
     @Output() save = new EventEmitter<t>()
     @Output() delete = new EventEmitter<number|null>()
@@ -27,8 +28,14 @@ export class EdicionItem<t extends ComponentItem<t>> {
     itemTemp!:t;
     editando:boolean=false;
     
-  
+    ngOnInit(): void {
+      if(!this.item.id&&this.itemGenerator){
+        this.comenzarAEditar();
+      }
+    }
+    
     comenzarAEditar(){
+      this.itemTemp=this.itemGenerator.nuevaInstancia();
       this.itemTemp.cambiarValores(this.item);
       this.editando=true;
     }
@@ -42,6 +49,12 @@ export class EdicionItem<t extends ComponentItem<t>> {
     cancel(){
       this.item.cambiarValores(this.itemTemp);
       this.editando=false;
+      console.log(this.itemTemp);
+      console.log(JSON.stringify(this.itemTemp));      
+      
+      //Si es la primera vez que se crea, su itemTemp no cambió en nada, por lo que si se cancela, consideramos que se cancela la creación de un objeto nuevo, por ello, lo borramos
+      if(JSON.stringify(this.itemTemp)==JSON.stringify(this.itemGenerator.nuevaInstancia()))
+      this.autoDelete.emit(this.item);
     }
     borrar(){
         this.delete.emit(this.item.id);

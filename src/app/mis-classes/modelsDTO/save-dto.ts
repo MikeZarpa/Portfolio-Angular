@@ -1,3 +1,4 @@
+//Con esta clase enviamos componentes a salvar como Habilidades, Proyectos...
 export class SaveDTO {
     id_usuario!:number;
     datos:any;

@@ -10,6 +10,7 @@
                     (save)="addListSave($event)"
                     (delete)="addListDelete($event)"
                     (autoDelete)="removeItem($event)"
+                    [itemGenerator]="itemGenerator"
                     [modoEdicion]="modoEdicion"
                     class="text-center" [item]=habilidad></app-skill-item>
                 </div>        

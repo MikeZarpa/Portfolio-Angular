@@ -1,3 +1,5 @@
+import { ComponentItem } from "./component-item";
+
 interface IExperiencia{
     id:number|null;
     lugarNombre:string;
@@ -6,7 +8,7 @@ interface IExperiencia{
     descripcion:string;
 }
 
-export class Experiencia {
+export class Experiencia implements ComponentItem<Experiencia>{
     public id:number|null;
     public lugarNombre!:string;
     public puestoNombre!:string;
@@ -20,4 +22,21 @@ export class Experiencia {
         this.periodo=experiencia?.periodo!;
         this.descripcion=experiencia?.descripcion!;
     };
+    
+    cambiarValores(item: Experiencia): void {
+        this.id=item.id ?? null;
+        this.lugarNombre=item.lugarNombre;
+        this.puestoNombre=item.puestoNombre;
+        this.periodo=item.periodo;
+        this.descripcion=item.descripcion;
+    }
+    nuevaInstancia(): Experiencia {
+        return new Experiencia({
+            id:null,
+            lugarNombre:"Nuevo Lugar de Experiencia",
+            puestoNombre:"Nuevo Puesto Ejercido",
+            periodo:"Nuevo Periodo",
+            descripcion:"Nueva descripción de las actividades."
+        });
+    }
 }

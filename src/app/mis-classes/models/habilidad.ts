@@ -27,6 +27,11 @@ export class Habilidad implements ComponentItem<Habilidad>{
         this.tipo=habilidad.tipo
     }
     nuevaInstancia(): Habilidad {
-        return new Habilidad();
+        return new Habilidad({
+            id:null,
+            nombre:"Nombre de Habilidad",
+            porcentaje:0,
+            tipo:"soft"
+        });
     }
 }
