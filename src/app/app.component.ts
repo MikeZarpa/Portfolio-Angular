@@ -14,12 +14,17 @@ import { PerfilService } from './mis-servicios/PerfilService/perfil.service';
 })
 
 export class AppComponent {
-  usuarioDTO:UsuarioDTO=new UsuarioDTO(new Usuario("Miguel Eduardo Schneider","Programador Web FullStack","","","Soy un gran desarrollador"));
+  usuarioDTO:UsuarioDTO=new UsuarioDTO();
 
   title = 'Portfolio';
   modoEdicion=true;
 
   constructor(private perfilService:PerfilService){
+    //Datos de prueba para la visualización sin correr el servidor
+    this.usuarioDTO.nombre="Miguel Eduardo Schneider";
+    this.usuarioDTO.titulo="Programador Web FullStack";
+    this.usuarioDTO.resumenPerfil="Soy un gran desarrollador";
+
     this.usuarioDTO.experiencias=[
       new Experiencia({id:null,lugarNombre:"Lugar Numero 1",puestoNombre:"Nombre del puesto",periodo:"Periodo de la experiencia",descripcion:"Descripción del puesto."}),
       new Experiencia({id:null,lugarNombre:"Lugar Numero 2",puestoNombre:"Nombre del puesto",periodo:"Periodo de la experiencia",descripcion:"Descripción del puesto."}),
@@ -47,8 +52,7 @@ export class AppComponent {
     //Enviamos un 0 pues el portfolio consultará siempre el mismo usuarioDTO, quizá en un futuro se desarrolle una opción de cambiar "cuentas" o la posibilidad de proveer información a otros perfiles.
     this.perfilService.setIdUsuario(0);
     //Inicializador para el portfolio
-    this.perfilService.obtenerUsuario().subscribe(res=>{console.log(res);
-      this.usuarioDTO=res;});
+    this.usuarioDTO=perfilService.obtenerUsuarioInicializado();
   }
   ngOnInit(): void {
   }
@@ -62,8 +66,9 @@ export class AppComponent {
     this.perfilService.borrarHabilidad(ids);
   }
   resetHabilidades(){
-    this.perfilService.obtenerUsuario().subscribe(res=>{this.usuarioDTO.habilidades=res.habilidades;});
+    this.perfilService.obtenerUsuario().subscribe(res=>{this.usuarioDTO.habilidades=this.usuarioDTO.generarArrayDesdeDTO<Habilidad>(res.habilidades,new Habilidad);});
   }
+
   //Experiencias
   saveExperiencias(experiencias:Array<Experiencia>){
     this.perfilService.saveExperiencia(experiencias);
@@ -72,8 +77,9 @@ export class AppComponent {
     this.perfilService.borrarExperiencia(ids);
   }
   resetExperiencias(){
-    this.perfilService.obtenerUsuario().subscribe(res=>{this.usuarioDTO.experiencias=res.experiencias;});
+    this.perfilService.obtenerUsuario().subscribe(res=>{this.usuarioDTO.experiencias=this.usuarioDTO.generarArrayDesdeDTO<Experiencia>(res.experiencias, new Experiencia());});
   }
+
   //Proyectos
   saveProyectos(proyectos:Array<Proyecto>){
     this.perfilService.saveProyecto(proyectos);
@@ -82,7 +88,7 @@ export class AppComponent {
     this.perfilService.borrarProyecto(ids);
   }
   resetProyectos(){
-    this.perfilService.obtenerUsuario().subscribe(res=>{this.usuarioDTO.proyectos=res.proyectos;});
+    this.perfilService.obtenerUsuario().subscribe(res=>{this.usuarioDTO.proyectos=this.usuarioDTO.generarArrayDesdeDTO<Proyecto>(res.proyectos,new Proyecto());});
   }
   
   //Educacions
@@ -93,7 +99,7 @@ export class AppComponent {
     this.perfilService.borrarEducacion(ids);
   }
   resetEducaciones(){
-    this.perfilService.obtenerUsuario().subscribe(res=>{this.usuarioDTO.educaciones=res.educaciones;});
+    this.perfilService.obtenerUsuario().subscribe(res=>{this.usuarioDTO.educaciones=this.usuarioDTO.generarArrayDesdeDTO<Educacion>(res.educaciones,new Educacion());});
   }
   
   //Usuario - Header
@@ -101,9 +107,6 @@ export class AppComponent {
     this.perfilService.saveUsuario(usuarioDTO);
   }
   resetUsuario(){
-    //Generamos una nueva instancia para que no se pierdan las propiedades de las clases
-    this.perfilService.obtenerUsuario().subscribe(res=>{
-      this.usuarioDTO=this.usuarioDTO.nuevaInstanciaDTO(res);
-    });
+    this.usuarioDTO.inicializarUsuarioDesdeDTO(this.perfilService.obtenerUsuarioInicializado());
   }
 }

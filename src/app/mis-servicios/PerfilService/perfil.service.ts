@@ -17,6 +17,7 @@ import { DatosDeConexion } from '../datos-de-conexion';
 export class PerfilService extends DatosDeConexion {
 
   private idUsuario!:number;
+  private usuarioDTO:UsuarioDTO=new UsuarioDTO();
 
   constructor(private consultaServi:ConsultaService, private deleteServi:DeleteService,private saveServi:SaveService) {
     super();
@@ -32,6 +33,13 @@ export class PerfilService extends DatosDeConexion {
   public obtenerUsuario():Observable<UsuarioDTO>{
     return this.consultaServi.getUsuario(this.idUsuario);
   }
+  //Inicializar para que conserven las propiedades
+  public obtenerUsuarioInicializado():UsuarioDTO{
+    this.obtenerUsuario().subscribe(res=>{console.log(res);
+    this.usuarioDTO.inicializarTodoDesdeDTO(res);});
+    return this.usuarioDTO;
+  }
+
 
   //Guardar cambios o crear nuevos elementos
 
