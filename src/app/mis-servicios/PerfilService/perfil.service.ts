@@ -23,9 +23,15 @@ export class PerfilService extends DatosDeConexion {
     super();
     consultaServi.setUrlConexion(this.urlConexionBase)
     deleteServi.setUrlConexion(this.urlConexionBase);
-    saveServi.setUrlConexion(this.urlConexionBase);    
+    saveServi.setUrlConexion(this.urlConexionBase);
+    this.setHeader()    
   }
 
+  public setHeader(){
+    this.consultaServi.setHeader();
+    this.deleteServi.setHeader();
+    this.saveServi.setHeader();
+  }
   public setIdUsuario(idUsuario:number):void{
     this.idUsuario=idUsuario;
     this.saveServi.setIdUsuario(this.idUsuario);
