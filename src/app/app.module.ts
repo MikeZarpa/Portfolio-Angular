@@ -20,6 +20,7 @@ import { HeaderEditBtnsComponent } from './mis-componentes/edicion/header-edit-b
 import { DeleteBtnComponent } from './mis-componentes/edicion/buttons/delete-btn/delete-btn.component';
 import { EditBtnComponent } from './mis-componentes/edicion/buttons/edit-btn/edit-btn.component';
 import { FooterEditSaveComponent } from './mis-componentes/edicion/footer-edit-save/footer-edit-save.component';
+import { interceptorProvider } from './mis-servicios/Interceptor/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { FooterEditSaveComponent } from './mis-componentes/edicion/footer-edit-s
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -34,7 +34,7 @@ export class SaveService {
     this.urlConexion=url;
    }
    public setHeader(){
-    this.header=new HttpHeaders().set('Type-Content','aplication/json').set('Authorization',''+localStorage.getItem("token"))
+    this.header=new HttpHeaders().set('Type-Content','aplication/json');
   }
 
    //Como Usuario no es DTO en Spring, necesitamos mandarlo de esta forma

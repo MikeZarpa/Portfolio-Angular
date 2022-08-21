@@ -19,7 +19,7 @@ export class DeleteService {
     this.urlConexion=url;
   }
   public setHeader(){
-    this.header=new HttpHeaders().set('Type-Content','aplication/json').set('Authorization',''+localStorage.getItem("token"))
+    this.header=new HttpHeaders().set('Type-Content','aplication/json');
   }
  
   public deleteHabilidad(listaId:number[]):void{

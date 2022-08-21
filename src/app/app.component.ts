@@ -20,6 +20,10 @@ export class AppComponent {
   modoEdicion=true;
 
   constructor(private perfilService:PerfilService){
+    //Enviamos un 0 pues el portfolio consultará siempre el mismo usuarioDTO, quizá en un futuro se desarrolle una opción de cambiar "cuentas" o la posibilidad de proveer información a otros perfiles.
+    this.perfilService.setIdUsuario(0);
+    //Inicializador para el portfolio
+    this.usuarioDTO=perfilService.obtenerUsuarioInicializado();
     //Datos de prueba para la visualización sin correr el servidor
     this.usuarioDTO.nombre="Miguel Eduardo Schneider";
     this.usuarioDTO.titulo="Programador Web FullStack";
@@ -49,10 +53,6 @@ export class AppComponent {
       new Proyecto({id:null,fecha:"Fecha 2",nombre:"Proyecto 2",descripcion:"Descripción del proyecto",img_logo:null,link:"https://www.google.com"}),
       new Proyecto({id:null,fecha:"Fecha 3",nombre:"Proyecto 3",descripcion:"Descripción del proyecto",img_logo:null,link:"https://www.google.com"}),
       new Proyecto({id:null,fecha:"Fecha 4",nombre:"Proyecto 4",descripcion:"Descripción del proyecto",img_logo:null,link:"https://www.google.com"})]
-    //Enviamos un 0 pues el portfolio consultará siempre el mismo usuarioDTO, quizá en un futuro se desarrolle una opción de cambiar "cuentas" o la posibilidad de proveer información a otros perfiles.
-    this.perfilService.setIdUsuario(0);
-    //Inicializador para el portfolio
-    this.usuarioDTO=perfilService.obtenerUsuarioInicializado();
   }
   ngOnInit(): void {
   }

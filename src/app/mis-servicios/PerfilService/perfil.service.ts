@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Usuario } from '../../mis-classes/models/usuario';
-import { Observable } from 'rxjs';
+import { concatMap, Observable } from 'rxjs';
 import { ConsultaService } from './subServices/consulta.service';
 import { DeleteService } from './subServices/delete.service';
 import { UsuarioDTO } from 'src/app/mis-classes/modelsDTO/usuario-dto';
