@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DatosLogin } from 'src/app/mis-classes/modelsDTO/datos-login';
 import { TokenService } from 'src/app/mis-servicios/TokenService/token.service';
 
@@ -9,16 +10,20 @@ import { TokenService } from 'src/app/mis-servicios/TokenService/token.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private tokenServi:TokenService) { }
+  @Input() modoEdicion:boolean=false;
+  mostrarLogin:boolean=false;
+  constructor(private tokenServi:TokenService,private route:Router) { }
 
   ngOnInit(): void {
   }
 
   onLogin(){
-    let datosLogin=new DatosLogin()
-    datosLogin.nombreUsuario="userNAME"
-    datosLogin.password="passWORD";
-    this.tokenServi.requestToken(datosLogin);
+    this.mostrarLogin=!this.mostrarLogin;
+  }
+  
+  onLogout(){
+    this.tokenServi.logout();
+    this.route.navigate(["/"]);
   }
 
 }

@@ -1,1 +1,16 @@
-<p>login works!</p>
+<div [ngClass]="{'animado':this.existe}" class="position-absolute end-0 medidas bg-light border border-2 user-select-none">
+    <form class="text-center">
+        <h3 class=" mt-3">Inicio de Sesión</h3>
+        <label class= "my-3">
+            <p>Nombre de Usuario:</p>
+            <input placeholder="Usuario" #inputNombre class="form-control px-2" type="text" (change)="changeNombre(inputNombre.value)" required>
+        </label>
+        <label class=" my-2">
+            <p>Password:</p>
+            <input placeholder="***" #inputPass type="password" class="form-control px-2"
+            (change)="changePass(inputPass.value)"
+             required>
+        </label>
+        <button class="btn btn-primary mt-1" (click)="onLogin()" type="button">Iniciar Sesión</button>
+    </form>
+</div>

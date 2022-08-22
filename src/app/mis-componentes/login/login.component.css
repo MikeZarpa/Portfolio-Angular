@@ -1,0 +1,19 @@
+
+.medidas{
+    --altura:330px;
+    width: 300px;
+    height: var(--altura);
+    box-sizing: border-box;
+    top: -330px;
+}
+.animado{
+    animation-name: deslizar-abajo;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;}
+
+
+@keyframes deslizar-abajo{
+    from {top: -330px;}
+    to {top: 50px;}
+}
