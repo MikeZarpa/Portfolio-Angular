@@ -1,5 +1,6 @@
 <div>    
-    <app-header></app-header>
+    <app-header
+        [modoEdicion]="modoEdicion"></app-header>
     <app-acerca-de
         (save)="saveUsuario($event)"
         [modoEdicion]=modoEdicion

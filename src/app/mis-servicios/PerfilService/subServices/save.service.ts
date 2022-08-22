@@ -22,6 +22,7 @@ export class SaveService {
 
   private id_usuario!:number;
   private urlConexion!:string;
+  private header!:HttpHeaders;
 
   constructor(private http:HttpClient) {
    }
@@ -32,12 +33,14 @@ export class SaveService {
    public setUrlConexion(url:string){
     this.urlConexion=url;
    }
+   public setHeader(){
+    this.header=new HttpHeaders().set('Type-Content','aplication/json');
+  }
 
    //Como Usuario no es DTO en Spring, necesitamos mandarlo de esta forma
    public saveUsuario(datos:Usuario):void{
     let options= {      
-      headers: new HttpHeaders().set('Type-Content','aplication/json'),}
-      console.log(datos);      
+      headers: this.header,}
       this.http.post(this.urlConexion+this.urlSaveUsuario,datos,options).subscribe();
    }
 
@@ -58,7 +61,7 @@ export class SaveService {
 
    private saveDatos(datos:any,urlSave:string):void{
     let options= {      
-      headers: new HttpHeaders().set('Type-Content','aplication/json')}
-      this.http.post(this.urlConexion+urlSave,new SaveDTO(this.id_usuario,datos),options).subscribe();
+      headers: this.header}
+      this.http.post<void>(this.urlConexion+urlSave,new SaveDTO(this.id_usuario,datos),options).subscribe();
    }
 }

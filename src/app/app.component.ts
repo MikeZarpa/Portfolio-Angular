@@ -6,6 +6,7 @@ import { Proyecto } from './mis-classes/models/proyecto';
 import { Usuario } from './mis-classes/models/usuario';
 import { UsuarioDTO } from './mis-classes/modelsDTO/usuario-dto';
 import { PerfilService } from './mis-servicios/PerfilService/perfil.service';
+import { TokenService } from './mis-servicios/TokenService/token.service';
 
 @Component({
   selector: 'app-root',
@@ -17,9 +18,13 @@ export class AppComponent {
   usuarioDTO:UsuarioDTO=new UsuarioDTO();
 
   title = 'Portfolio';
-  modoEdicion=true;
+  modoEdicion=false;
 
-  constructor(private perfilService:PerfilService){
+  constructor(private perfilService:PerfilService,private tokenService:TokenService){
+    //Enviamos un 0 pues el portfolio consultará siempre el mismo usuarioDTO, quizá en un futuro se desarrolle una opción de cambiar "cuentas" o la posibilidad de proveer información a otros perfiles.
+    this.perfilService.setIdUsuario(0);
+    //Inicializador para el portfolio
+    this.usuarioDTO=perfilService.obtenerUsuarioInicializado();
     //Datos de prueba para la visualización sin correr el servidor
     this.usuarioDTO.nombre="Miguel Eduardo Schneider";
     this.usuarioDTO.titulo="Programador Web FullStack";
@@ -49,12 +54,9 @@ export class AppComponent {
       new Proyecto({id:null,fecha:"Fecha 2",nombre:"Proyecto 2",descripcion:"Descripción del proyecto",img_logo:null,link:"https://www.google.com"}),
       new Proyecto({id:null,fecha:"Fecha 3",nombre:"Proyecto 3",descripcion:"Descripción del proyecto",img_logo:null,link:"https://www.google.com"}),
       new Proyecto({id:null,fecha:"Fecha 4",nombre:"Proyecto 4",descripcion:"Descripción del proyecto",img_logo:null,link:"https://www.google.com"})]
-    //Enviamos un 0 pues el portfolio consultará siempre el mismo usuarioDTO, quizá en un futuro se desarrolle una opción de cambiar "cuentas" o la posibilidad de proveer información a otros perfiles.
-    this.perfilService.setIdUsuario(0);
-    //Inicializador para el portfolio
-    this.usuarioDTO=perfilService.obtenerUsuarioInicializado();
   }
   ngOnInit(): void {
+    this.modoEdicion=this.tokenService.isLogged();
   }
 
   //////////Para Eventos

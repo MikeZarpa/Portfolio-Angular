@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Usuario } from '../../mis-classes/models/usuario';
-import { Observable } from 'rxjs';
+import { concatMap, Observable } from 'rxjs';
 import { ConsultaService } from './subServices/consulta.service';
 import { DeleteService } from './subServices/delete.service';
 import { UsuarioDTO } from 'src/app/mis-classes/modelsDTO/usuario-dto';
@@ -23,9 +23,15 @@ export class PerfilService extends DatosDeConexion {
     super();
     consultaServi.setUrlConexion(this.urlConexionBase)
     deleteServi.setUrlConexion(this.urlConexionBase);
-    saveServi.setUrlConexion(this.urlConexionBase);    
+    saveServi.setUrlConexion(this.urlConexionBase);
+    this.setHeader()    
   }
 
+  public setHeader(){
+    this.consultaServi.setHeader();
+    this.deleteServi.setHeader();
+    this.saveServi.setHeader();
+  }
   public setIdUsuario(idUsuario:number):void{
     this.idUsuario=idUsuario;
     this.saveServi.setIdUsuario(this.idUsuario);
