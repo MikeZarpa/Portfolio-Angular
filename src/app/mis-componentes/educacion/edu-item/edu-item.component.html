@@ -4,9 +4,17 @@
         (delete)="borrar()"
         [visible]="modoEdicion&&!editando"></app-header-edit-btns>
     <div class="row">
-        <div class="offset-1 col-2">
-            <img src="" alt="Logo de Educación">
+        <!-- Imagen -->
+        <div class="offset-1 col-2 h-100 d-flex flex-column overflow-hidden">
+            <img class="img-fluid" [src]=item.img_logo alt="Logo de Educación">
+            <app-img-edit-btns
+                [mostrarControles]="editando"
+                [ocultarBotones]="hayArchivosParaCargar()"
+                (inputChange)="catchFileEvent($event)"
+                (cargar)="onCargarImg()"
+                ></app-img-edit-btns>
         </div>
+        <!-- Texto -->
         <div class="col">
             <h3 class="fs-3">{{item.carreraNombre}}</h3>
             <div *ngIf="editando" class="row">
@@ -31,7 +39,7 @@
     </div>
     <div class="row justify-content-center text-center" *ngIf="editando">
         <div>
-            <button class="btn btn-success m-1 mt-0 " (click)="guardarCambios()">Guardar Cambios</button>
+            <button class="btn btn-success m-1 mt-0 " [disabled]="!sePuedeGuardar()" (click)="guardarCambios()">Guardar Cambios</button>
             <button class="btn btn-secondary m-1 mt-0" (click)="cancel()">Cancelar</button>
         </div>
     </div>

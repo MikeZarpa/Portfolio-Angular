@@ -1,0 +1,7 @@
+<div *ngIf="mostrarControles">
+    <input type="file" class="form-control form-control-sm" (change)="onChange($event)" name="" id="">
+    <div class="row" *ngIf="ocultarBotones">
+        <button class="col btn btn-primary" (click)="onCargar()">Cargar</button>
+        <button class="col btn btn-secondary" (click)="onCancelar()">Cancelar</button>
+    </div>
+</div>
