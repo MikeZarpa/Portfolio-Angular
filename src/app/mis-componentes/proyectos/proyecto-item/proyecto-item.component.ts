@@ -1,16 +1,17 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Proyecto } from 'src/app/mis-classes/models/proyecto';
-import { EdicionItem } from 'src/app/mis-classes/paraEdicion/edicion-item';
+import { EdicionItemConImagen } from 'src/app/mis-classes/paraEdicion/edicion-item-con-imagen';
+import { ImageStorageService } from 'src/app/mis-servicios/ImageStorageService/image-storage.service';
 
 @Component({
   selector: 'app-proyecto-item',
   templateUrl: './proyecto-item.component.html',
   styleUrls: ['./proyecto-item.component.css']
 })
-export class ProyectoItemComponent extends EdicionItem<Proyecto> implements OnInit {
+export class ProyectoItemComponent extends EdicionItemConImagen<Proyecto> implements OnInit {
 
-  constructor() {
-    super()
+  constructor(imgStorage:ImageStorageService) {
+    super(imgStorage)
    }
   cambiandoNombre(texto:string){
     this.item.nombre=texto;
@@ -24,4 +25,8 @@ export class ProyectoItemComponent extends EdicionItem<Proyecto> implements OnIn
   cambiandoLink(texto:string){
     this.item.link=texto;
   }  
+  override cargarUrlImg(url: string): void {
+    super.cargarUrlImg(url);
+    this.item.img_logo=url;
+  }
 }
