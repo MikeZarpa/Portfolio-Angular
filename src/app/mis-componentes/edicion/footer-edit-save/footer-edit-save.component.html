@@ -10,7 +10,7 @@
         <div class="col">        
         </div>
         <div class="col-3 mb-2">
-            <button (click)="guardarEvent()" class="btn btn-success me-3">Guardar cambios</button>
+            <button (click)="guardarEvent()" [disabled]="saveDisable" class="btn btn-success me-3">Guardar cambios</button>
             <button (click)="cancelarEvent()" class="btn btn-secondary">Cancelar</button>
         </div>
     </div>

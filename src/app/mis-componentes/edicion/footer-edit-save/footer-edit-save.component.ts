@@ -7,9 +7,10 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class FooterEditSaveComponent implements OnInit {
 
-  @Input() visible=true;
-  @Input() visibleSave=true;
-  @Input() onlySaveAndCancel=false;
+  @Input() visible:boolean=true;
+  @Input() visibleSave:boolean=true;
+  @Input() onlySaveAndCancel:boolean=false;
+  @Input() saveDisable:boolean=false;
   @Output() newItem= new EventEmitter<string>();
   @Output() guardar= new EventEmitter<string>();
   @Output() cancelar= new EventEmitter<string>();
