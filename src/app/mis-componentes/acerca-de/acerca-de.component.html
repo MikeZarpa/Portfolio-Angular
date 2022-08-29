@@ -7,7 +7,14 @@
         <div class="col"></div>
         <div class="col-3 ">
             <div class="fotoPerfil mx-auto r">
-                <img class="img-height img-thumbnail rounded-circle" src="./assets/images/Foto_perfil.webp" alt="Foto de Perfil">
+                <img class="img-height img-thumbnail rounded-circle" [src]="item.img_perfil" alt="Foto de Perfil">
+            <app-img-edit-btns
+                [mostrarControles]="editando"
+                [ocultarBotones]="hayArchivosParaCargar()"
+                (inputChange)="catchFileEvent($event)"
+                (cargar)="onCargarImg()"
+                ></app-img-edit-btns>
+                
             </div>
             <p class="text-center fs-2">{{item.nombre}}</p>
             <div *ngIf="editando" class="row">
@@ -38,6 +45,7 @@
     <app-footer-edit-save
         [visible]="modoEdicion"
         [onlySaveAndCancel]="true"
+        [saveDisable]="!sePuedeGuardar()"
         [visibleSave]="hayCambiosQueGuardar()"
         (guardar)="saveUsuario()"
         (cancelar)="cancel()"></app-footer-edit-save>

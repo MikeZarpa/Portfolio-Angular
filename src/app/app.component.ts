@@ -31,9 +31,9 @@ export class AppComponent {
     this.usuarioDTO.resumenPerfil="Soy un gran desarrollador";
 
     this.usuarioDTO.experiencias=[
-      new Experiencia({id:null,lugarNombre:"Lugar Numero 1",puestoNombre:"Nombre del puesto",periodo:"Periodo de la experiencia",descripcion:"Descripción del puesto."}),
-      new Experiencia({id:null,lugarNombre:"Lugar Numero 2",puestoNombre:"Nombre del puesto",periodo:"Periodo de la experiencia",descripcion:"Descripción del puesto."}),
-      new Experiencia({id:null,lugarNombre:"Lugar Numero 3",puestoNombre:"Nombre del puesto",periodo:"Periodo de la experiencia",descripcion:"Descripción del puesto."})]
+      new Experiencia({id:null,lugarNombre:"Lugar Numero 1",puestoNombre:"Nombre del puesto",periodo:"Periodo de la experiencia",descripcion:"Descripción del puesto.",img_logo:""}),
+      new Experiencia({id:null,lugarNombre:"Lugar Numero 2",puestoNombre:"Nombre del puesto",periodo:"Periodo de la experiencia",descripcion:"Descripción del puesto.",img_logo:""}),
+      new Experiencia({id:null,lugarNombre:"Lugar Numero 3",puestoNombre:"Nombre del puesto",periodo:"Periodo de la experiencia",descripcion:"Descripción del puesto.",img_logo:""})]
 
     this.usuarioDTO.educaciones=[
       new Educacion({id:null,lugarNombre:"Lugar Educacion 1",carreraNombre:"Nombre de la Carrera 1",img_logo:null,periodo:"Periodo Educacion"}),

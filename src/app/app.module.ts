@@ -21,6 +21,7 @@ import { DeleteBtnComponent } from './mis-componentes/edicion/buttons/delete-btn
 import { EditBtnComponent } from './mis-componentes/edicion/buttons/edit-btn/edit-btn.component';
 import { FooterEditSaveComponent } from './mis-componentes/edicion/footer-edit-save/footer-edit-save.component';
 import { interceptorProvider } from './mis-servicios/Interceptor/interceptor.service';
+import { ImgEditBtnsComponent } from './mis-componentes/edicion/img-edit-btns/img-edit-btns.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { interceptorProvider } from './mis-servicios/Interceptor/interceptor.ser
     EditBtnComponent,
     DeleteBtnComponent,
     HeaderEditBtnsComponent,
-    FooterEditSaveComponent
+    FooterEditSaveComponent,
+    ImgEditBtnsComponent
   ],
   imports: [
     //añadimos el modulo HttpClient al array de imports para los servidores

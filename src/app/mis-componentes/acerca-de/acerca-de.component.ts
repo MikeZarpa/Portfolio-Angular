@@ -1,15 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/mis-classes/models/usuario';
-import { EdicionItem } from 'src/app/mis-classes/paraEdicion/edicion-item';
+import { EdicionItemConImagen } from 'src/app/mis-classes/paraEdicion/edicion-item-con-imagen';
+import { ImageStorageService } from 'src/app/mis-servicios/ImageStorageService/image-storage.service';
 
 @Component({
   selector: 'app-acerca-de',
   templateUrl: './acerca-de.component.html',
   styleUrls: ['./acerca-de.component.css']
 })
-export class AcercaDeComponent extends EdicionItem<Usuario> implements OnInit {
-  constructor() {
-    super()
+export class AcercaDeComponent extends EdicionItemConImagen<Usuario> implements OnInit {
+  constructor(imgStorage:ImageStorageService) {
+    super(imgStorage)
     this.itemGenerator=new Usuario();
   }
   override ngOnInit(): void {
@@ -33,5 +34,10 @@ export class AcercaDeComponent extends EdicionItem<Usuario> implements OnInit {
   saveUsuario(){
     this.save.emit(this.item);
     this.editando=false;
+  }
+
+  override cargarUrlImg(url: string): void {
+    super.cargarUrlImg(url);
+    this.item.img_perfil=url;
   }
 }
