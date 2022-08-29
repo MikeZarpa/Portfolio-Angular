@@ -47,7 +47,7 @@
         [ocultarBotones]="hayArchivosParaCargar()"
         (inputChange)="catchFileEvent($event)"
         (cargar)="onCargarImg()"
-        (cancelar)="cancel()"></app-img-edit-btns>
+        (cancelar)="onCancelarImg()"></app-img-edit-btns>
     <img class="w-100" [src]="item.img_banner" alt="Imagen del Banner">      
 
 
