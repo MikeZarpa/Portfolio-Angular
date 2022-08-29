@@ -25,8 +25,29 @@
     </div>    
 </div>
 <app-login class="" [existe]="mostrarLogin"></app-login>
-<div class="container-fluid banner bg-gradient bg-dark p-0 overflow-hidden">
-    <img class="w-100" src="/assets/images/Banner.jpg" alt="Imagen del Banner">
-</div>
+<div class="container-fluid banner bg-gradient bg-dark p-0 overflow-hidden position-relative">
+    <div class="position-absolute w-100 top-0 end-0 z-2">        
+        <!-- Control para entrar al modo edición -->
+        <app-header-edit-btns 
+            (edit)="comenzarAEditar()"
+            [onlyEdit]="true"
+            [visible]="modoEdicion&&!editando"></app-header-edit-btns>
+        <!-- Colocamos los botones de guardado arriba de la imagen -->
+        <app-footer-edit-save
+            [visible]="modoEdicion"
+            [onlySaveAndCancel]="true"
+            [saveDisable]="desactivarGuardar()"
+            [visibleSave]="editando"
+            (guardar)="saveUsuario()"
+            (cancelar)="cancel()"></app-footer-edit-save>
+    </div>
+    <app-img-edit-btns
+        class="position-absolute z-2"
+        [mostrarControles]="editando"
+        [ocultarBotones]="hayArchivosParaCargar()"
+        (inputChange)="catchFileEvent($event)"
+        (cargar)="onCargarImg()"
+        (cancelar)="cancel()"></app-img-edit-btns>
+    <img class="w-100" [src]="item.img_banner" alt="Imagen del Banner">      
 
 

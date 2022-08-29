@@ -48,9 +48,7 @@ export class EdicionItem<t extends ComponentItem<t>> implements OnInit {
   
     cancel(){
       this.item.cambiarValores(this.itemTemp);
-      this.editando=false;
-      console.log(this.itemTemp);
-      console.log(JSON.stringify(this.itemTemp));      
+      this.editando=false;    
       
       //Si es la primera vez que se crea, su itemTemp no cambió en nada, por lo que si se cancela, consideramos que se cancela la creación de un objeto nuevo, por ello, lo borramos
       if(JSON.stringify(this.itemTemp)==JSON.stringify(this.itemGenerator.nuevaInstancia()))
