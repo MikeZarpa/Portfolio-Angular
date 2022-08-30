@@ -6,17 +6,16 @@
     <div class="row">
         <div class="col"></div>
         <div class="col-3 ">
-            <div class="fotoPerfil mx-auto r">
+            <div class="fotoPerfil mx-auto">
                 <img class="img-height img-thumbnail rounded-circle" [src]="item.img_perfil" alt="Foto de Perfil">
+            </div>
             <app-img-edit-btns
                 [mostrarControles]="editando"
                 [ocultarBotones]="hayArchivosParaCargar()"
                 (inputChange)="catchFileEvent($event)"
                 (cargar)="onCargarImg()"
                 (cancelar)="onCancelarImg()"
-                ></app-img-edit-btns>
-                
-            </div>
+                ></app-img-edit-btns>                
             <p class="text-center fs-2">{{item.nombre}}</p>
             <div *ngIf="editando" class="row">
                 <input class="col mb-3 ms-2 me-5" type="text"
