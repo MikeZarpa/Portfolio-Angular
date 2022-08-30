@@ -31,7 +31,7 @@ export class Habilidad implements ComponentItem<Habilidad>{
             id:null,
             nombre:"Nombre de Habilidad",
             porcentaje:0,
-            tipo:"soft"
+            tipo:"Soft"
         });
     }
 }
