@@ -13,6 +13,10 @@ export class EduItemComponent extends EdicionItemConImagen<Educacion> implements
   constructor(private imagenStorage:ImageStorageService) {
     super(imagenStorage)
    }
+   override ngOnInit(): void {
+    super.ngOnInit();
+    this.item.img_logo=this.colocarPlaceHolder(this.item.img_logo);
+   }
 
   cambiandoCarrera(texto:string){
     this.item.carreraNombre=texto;

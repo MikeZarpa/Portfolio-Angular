@@ -43,6 +43,7 @@ export class ControlDeEdicion<t extends ComponentItem<t>> {
             }
         });
         //Además como se quiere borrar un elemento, corroboramos que no se tome cualquier cambio que se quizo hacer antes.
+        //Es decir, si el elemento a borrar estaba en la lista para guardar cambios, revisamos y lo quitamos, al fin y al cabo, lo vamos a borrar.
         this.listSave.forEach((item, index, array) => {
             if(item===elemento){
                 array.splice(index,1);

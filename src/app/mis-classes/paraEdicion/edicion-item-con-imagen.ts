@@ -67,4 +67,11 @@ export class EdicionItemConImagen<t extends ComponentItem<t>> extends EdicionIte
      return (!this.uploadingImg||this.finishUploadImg||this.errorUploadImg)&&this.HayCambios();
      //Se puede guardar si: No se está cargando una imagen ó si la carga de la imagen ya finalizó o dio error.
   }
+  //Si el elemento no tiene dirección de imagen asignada le devuelve la dirección del placeholder
+  colocarPlaceHolder(texto:string|null):string{
+    if(texto)
+      if(texto!="")
+        return texto;
+    return "/assets/images/placeholder-img.webp";
+  }
 }
