@@ -21,7 +21,14 @@ export class ControlDeEdicion<t extends ComponentItem<t>> {
 
     //Para poder administrar las listas.
     addListSave(elemento:t){
-        this.listSave.push(elemento);
+        //Evitamos que se salve varias veces el mismo elemento
+        let estaEnLaLista=false;
+        this.listSave.forEach((item, index, array) => {
+            if(item===elemento){
+                estaEnLaLista=true;
+            }
+        })
+        if(!estaEnLaLista) this.listSave.push(elemento);
     }
     addListDelete(idNumber: number|null){
         if(idNumber!=null){
