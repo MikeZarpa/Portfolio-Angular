@@ -6,6 +6,7 @@ interface IEducacion{
     carreraNombre:string;
     periodo:string;
     img_logo:string|null;
+    estado:string;
 }
 
 export class Educacion implements ComponentItem<Educacion> {
@@ -14,6 +15,7 @@ export class Educacion implements ComponentItem<Educacion> {
     public carreraNombre!:string;
     public periodo!:string;
     public img_logo:string|null;
+    public estado!:string;
 
     constructor(educacion?:IEducacion){
         this.id=educacion?.id ?? null;
@@ -21,6 +23,7 @@ export class Educacion implements ComponentItem<Educacion> {
         this.carreraNombre=educacion?.carreraNombre!;
         this.periodo=educacion?.periodo!;
         this.img_logo=educacion?.img_logo ?? null;
+        this.estado=educacion?.estado!;
     };
     cambiarValores(item: Educacion): void {
         this.id=item.id;
@@ -28,6 +31,7 @@ export class Educacion implements ComponentItem<Educacion> {
         this.carreraNombre=item.carreraNombre;
         this.periodo=item.periodo;
         this.img_logo=item.img_logo;
+        this.estado=item.estado;
     }
     nuevaInstancia(): Educacion {
         return new Educacion({
@@ -35,7 +39,8 @@ export class Educacion implements ComponentItem<Educacion> {
             lugarNombre:"Nueva Institución Educativa",
             carreraNombre:"Nuevo Título",
             periodo:"Nuevo Periodo",
-            img_logo:null
+            img_logo:null,
+            estado:"Estado del Estudio."
             });
     }
 
