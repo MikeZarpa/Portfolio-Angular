@@ -64,7 +64,7 @@ export class EdicionItemConImagen<t extends ComponentItem<t>> extends EdicionIte
   
   //Control para guardar cambios
    sePuedeGuardar(){
-     return !this.uploadingImg||this.finishUploadImg||this.errorUploadImg;
+     return (!this.uploadingImg||this.finishUploadImg||this.errorUploadImg)&&this.HayCambios();
      //Se puede guardar si: No se está cargando una imagen ó si la carga de la imagen ya finalizó o dio error.
   }
 }
