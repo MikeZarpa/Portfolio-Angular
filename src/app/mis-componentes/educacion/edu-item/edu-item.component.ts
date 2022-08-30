@@ -23,6 +23,9 @@ export class EduItemComponent extends EdicionItemConImagen<Educacion> implements
   cambiandoPeriodo(texto:string){
     this.item.periodo=texto;
   }
+  cambiandoEstado(texto:string){
+    this.item.estado=texto;
+  }
   override cargarUrlImg(url:string){  
     super.cargarUrlImg(url);
     this.item.img_logo=url;

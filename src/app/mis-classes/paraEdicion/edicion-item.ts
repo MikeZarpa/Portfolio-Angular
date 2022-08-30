@@ -41,9 +41,11 @@ export class EdicionItem<t extends ComponentItem<t>> implements OnInit {
     }
     
     guardarCambios(){
-      if(!(JSON.stringify(this.item)===JSON.stringify(this.itemTemp)))
       this.save.emit(this.item);
       this.editando=false;
+    }
+    HayCambios(){
+      return !(JSON.stringify(this.item)===JSON.stringify(this.itemTemp))
     }
   
     cancel(){

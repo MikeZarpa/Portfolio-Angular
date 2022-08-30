@@ -36,10 +36,10 @@ export class AppComponent {
       new Experiencia({id:null,lugarNombre:"Lugar Numero 3",puestoNombre:"Nombre del puesto",periodo:"Periodo de la experiencia",descripcion:"Descripción del puesto.",img_logo:""})]
 
     this.usuarioDTO.educaciones=[
-      new Educacion({id:null,lugarNombre:"Lugar Educacion 1",carreraNombre:"Nombre de la Carrera 1",img_logo:null,periodo:"Periodo Educacion"}),
-      new Educacion({id:null,lugarNombre:"Lugar Educacion 2",carreraNombre:"Nombre de la Carrera 2",img_logo:null,periodo:"Periodo Educacion"}),
-      new Educacion({id:null,lugarNombre:"Lugar Educacion 3",carreraNombre:"Nombre de la Carrera 3",img_logo:null,periodo:"Periodo Educacion"}),
-      new Educacion({id:null,lugarNombre:"Lugar Educacion 4",carreraNombre:"Nombre de la Carrera 4",img_logo:null,periodo:"Periodo Educacion"}),
+      new Educacion({id:null,lugarNombre:"Lugar Educacion 1",carreraNombre:"Nombre de la Carrera 1",img_logo:null,periodo:"Periodo Educacion",estado:"Estado"}),
+      new Educacion({id:null,lugarNombre:"Lugar Educacion 2",carreraNombre:"Nombre de la Carrera 2",img_logo:null,periodo:"Periodo Educacion",estado:"Estado"}),
+      new Educacion({id:null,lugarNombre:"Lugar Educacion 3",carreraNombre:"Nombre de la Carrera 3",img_logo:null,periodo:"Periodo Educacion",estado:"Estado"}),
+      new Educacion({id:null,lugarNombre:"Lugar Educacion 4",carreraNombre:"Nombre de la Carrera 4",img_logo:null,periodo:"Periodo Educacion",estado:"Estado"}),
     ];
 
     this.usuarioDTO.habilidades=[
