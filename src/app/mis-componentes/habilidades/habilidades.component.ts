@@ -17,5 +17,10 @@ export class HabilidadesComponent extends ControlDeEdicion<Habilidad> implements
 
   ngOnInit(): void {
   }
-
+  listaDeSkillHard(lista:Array<Habilidad>){
+    return lista.filter(habilidad => habilidad.tipo=="Hard")
+  }
+  listaDeSkillSoft(lista:Array<Habilidad>){
+    return lista.filter(habilidad => habilidad.tipo=="Soft")
+  }
 }

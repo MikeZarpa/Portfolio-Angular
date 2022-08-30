@@ -13,6 +13,10 @@ export class ProyectoItemComponent extends EdicionItemConImagen<Proyecto> implem
   constructor(imgStorage:ImageStorageService) {
     super(imgStorage)
    }
+   override ngOnInit(): void {
+    super.ngOnInit();
+    this.item.img_logo=this.colocarPlaceHolder(this.item.img_logo);
+   }
   cambiandoNombre(texto:string){
     this.item.nombre=texto;
   }

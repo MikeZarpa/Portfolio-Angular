@@ -12,6 +12,10 @@ export class ExpItemComponent extends EdicionItemConImagen<Experiencia> implemen
   constructor(imgStorage:ImageStorageService) {
     super(imgStorage);
    }
+   override ngOnInit(): void {
+    super.ngOnInit();
+    this.item.img_logo=this.colocarPlaceHolder(this.item.img_logo);
+   }
 
   cambiandoLugar(texto:string){
     this.item.lugarNombre=texto;
