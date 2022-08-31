@@ -24,6 +24,7 @@ import { interceptorProvider } from './mis-servicios/Interceptor/interceptor.ser
 import { ImgEditBtnsComponent } from './mis-componentes/edicion/img-edit-btns/img-edit-btns.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { FooterComponent } from './mis-componentes/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     HeaderEditBtnsComponent,
     FooterEditSaveComponent,
     ImgEditBtnsComponent,
+    FooterComponent,
   ],
   imports: [
     //añadimos el modulo HttpClient al array de imports para los servidores
