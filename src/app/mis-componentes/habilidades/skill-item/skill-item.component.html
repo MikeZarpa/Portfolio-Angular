@@ -32,7 +32,7 @@
                 (keyup)="cambiandoPorcentaje(inputPorcentaje.value)"
                  name="" id=""></div>
         <div *ngIf="editando" class="row my-2">
-            <select #selectTipo [value]="item.tipo" (change)="cambiandoTipo(selectTipo.value)" name="select">
+            <select class="col mx-2" #selectTipo [value]="item.tipo" (change)="cambiandoTipo(selectTipo.value)" name="select">
                 <option value="Hard">Hard</option>
                 <option value="Soft">Soft</option></select>
             </div>
