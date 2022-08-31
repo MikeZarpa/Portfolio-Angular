@@ -36,10 +36,10 @@ export class Proyecto implements ComponentItem<Proyecto> {
     nuevaInstancia(): Proyecto {
         return new Proyecto({
             id:null,
-            fecha:"Nueva Fecha Proyecto",
+            fecha:"Periodo de desarrollo",
             nombre:"Nuevo Proyecto",
             descripcion:"Nueva descripción del Proyecto",
-            link:"Direccion del proyecto (https://...) ",
+            link:"",
             img_logo:null
         });
     }

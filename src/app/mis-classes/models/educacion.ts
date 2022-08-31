@@ -38,7 +38,7 @@ export class Educacion implements ComponentItem<Educacion> {
             id:null,
             lugarNombre:"Nueva Institución Educativa",
             carreraNombre:"Nuevo Título",
-            periodo:"Nuevo Periodo",
+            periodo:"Nuevo Periodo de cursada.",
             img_logo:null,
             estado:"Estado del Estudio."
             });

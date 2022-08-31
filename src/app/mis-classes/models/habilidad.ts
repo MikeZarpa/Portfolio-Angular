@@ -30,7 +30,7 @@ export class Habilidad implements ComponentItem<Habilidad>{
         return new Habilidad({
             id:null,
             nombre:"Nombre de Habilidad",
-            porcentaje:0,
+            porcentaje:1,
             tipo:"Soft"
         });
     }
