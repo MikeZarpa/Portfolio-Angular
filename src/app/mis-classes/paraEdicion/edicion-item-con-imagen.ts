@@ -40,6 +40,9 @@ export class EdicionItemConImagen<t extends ComponentItem<t>> extends EdicionIte
     if(this.eventFileImg==null) return false;
     else return this.eventFileImg.target.files.length>0
   }
+  ocultarBotonesGuardarImg(){
+    return this.hayArchivosParaCargar() && !this.uploadingImg;
+  }
   onCancelarImg(){
     //Aprovechamos que los objetos se pasan por referencia en JS/TS, así que a nuestro objeto 'eventFileImg' podemos editarlo, afectando al componente 'Input' de quien recibió el valor.
     this.eventFileImg.target.value=null;

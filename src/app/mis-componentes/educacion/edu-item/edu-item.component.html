@@ -9,7 +9,7 @@
             <img class="img-fluid" [src]=item.img_logo alt="Logo de Educación">
             <app-img-edit-btns
                 [mostrarControles]="editando"
-                [ocultarBotones]="hayArchivosParaCargar()"
+                [ocultarBotones]="ocultarBotonesGuardarImg()"
                 (inputChange)="catchFileEvent($event)"
                 (cargar)="onCargarImg()"
                 (cancelar)="onCancelarImg()"

@@ -44,7 +44,7 @@
     <app-img-edit-btns
         class="position-absolute z-2"
         [mostrarControles]="editando"
-        [ocultarBotones]="hayArchivosParaCargar()"
+        [ocultarBotones]="ocultarBotonesGuardarImg()"
         (inputChange)="catchFileEvent($event)"
         (cargar)="onCargarImg()"
         (cancelar)="onCancelarImg()"></app-img-edit-btns>

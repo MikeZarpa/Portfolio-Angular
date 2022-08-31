@@ -11,7 +11,7 @@
             </div>
             <app-img-edit-btns
                 [mostrarControles]="editando"
-                [ocultarBotones]="hayArchivosParaCargar()"
+                [ocultarBotones]="ocultarBotonesGuardarImg()"
                 (inputChange)="catchFileEvent($event)"
                 (cargar)="onCargarImg()"
                 (cancelar)="onCancelarImg()"
@@ -32,7 +32,7 @@
         </div>
         <div class="col-4">
             <div class="espaciadoPerfil"></div>
-            <p class="fs-1">Sobre mi</p>
+            <p class="fs-1">Acerca de mi</p>
             <p class="fs-3">{{item.resumenPerfil}}</p>
             <div *ngIf="editando" class="row">
                 <input class="col mb-3 ms-2 me-5" type="text"
@@ -45,8 +45,8 @@
     <app-footer-edit-save
         [visible]="modoEdicion"
         [onlySaveAndCancel]="true"
-        [saveDisable]="!sePuedeGuardar()"
-        [visibleSave]="hayCambiosQueGuardar()"
+        [saveDisable]="desactivarGuardar()"
+        [visibleSave]="editando"
         (guardar)="saveUsuario()"
         (cancelar)="cancel()"></app-footer-edit-save>
 </div>

@@ -21,8 +21,8 @@ export class AppComponent {
   modoEdicion=false;
 
   constructor(private perfilService:PerfilService,private tokenService:TokenService){
-    //Enviamos un 0 pues el portfolio consultará siempre el mismo usuarioDTO, quizá en un futuro se desarrolle una opción de cambiar "cuentas" o la posibilidad de proveer información a otros perfiles.
-    this.perfilService.setIdUsuario(0);
+    //Enviamos un 1 pues el portfolio consultará siempre el mismo usuarioDTO, quizá en un futuro se desarrolle una opción de cambiar "cuentas" o la posibilidad de proveer información a otros perfiles.
+    this.perfilService.setIdUsuario(1);
     //Inicializador para el portfolio
     this.usuarioDTO=perfilService.obtenerUsuarioInicializado();
     //Datos de prueba para la visualización sin correr el servidor
