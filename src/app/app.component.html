@@ -1,4 +1,8 @@
-<div>    
+<div class="user-select-none" *ngIf=!terminoLaCarga>
+    <h1 c>Cargando...</h1>
+    <mat-progress-spinner class="mx-auto" [diameter]="60" mode="indeterminate"></mat-progress-spinner>
+</div>
+<div *ngIf=terminoLaCarga>    
     <app-header
         (save)="saveUsuario($event)"
         [item]="usuarioDTO"
