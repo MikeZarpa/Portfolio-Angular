@@ -26,7 +26,9 @@ export class TokenService extends DatosDeConexion {
         res => {
             this.saveToken(res);
             this.refreshPage();
-        }
+        },(error) => {
+          alert("Credenciales inválidas.");
+       }
       );
      
   }

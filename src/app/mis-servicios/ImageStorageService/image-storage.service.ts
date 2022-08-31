@@ -32,8 +32,7 @@ export class ImageStorageService {
       //Esperamos que nos devuelva una dirección de descarga (es una promesa).
       return await respuesta.ref.getDownloadURL();
     } catch (err) {
-      console.log("Error al subir la imagen");      
-      console.log(err);
+      alert("Error al subir la imagen");
       return null;
     }    
   }
