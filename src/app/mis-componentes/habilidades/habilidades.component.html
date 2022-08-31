@@ -1,10 +1,9 @@
 <div class="container-fluid bg-secondary bg-opacity-75 bg-gradient">
     <div class="row"> 
-        <h2 class="offset-1 col mt-4">Habilidades Hard & Soft</h2>
+        <h2 class="offset-1 col mt-4 user-select-none">Habilidades Hard</h2>
     </div>
     <div class="row row-cols-1">
-        <div class="offset-1 col-10">            
-            <h3 class="offset-1 col mt-4">Habilidades Duras</h3>
+        <div class="offset-1 col-10">
             <div class="row justify-content-evenly">
                 <div class="col col-auto mb-2" *ngFor="let habilidad of listaDeSkillHard(itemsList)">
                     <app-skill-item
@@ -16,17 +15,23 @@
                     class="text-center" [item]=habilidad></app-skill-item>
                 </div>        
             </div>
-            <h3 class="offset-1 col mt-4">Habilidades Blandas</h3>
+        </div>
+    </div>
+    <div class="row"> 
+        <h2 class="offset-1 col mt-4 user-select-none">Habilidades Soft</h2>
+    </div>
+    <div class="row row-cols-1">
+        <div class="offset-1 col-10">
             <div class="row justify-content-evenly">
                 <div class="col col-auto mb-2" *ngFor="let habilidad of listaDeSkillSoft(itemsList)">
-                    <app-skill-item
-                    (save)="addListSave($event)"
-                    (delete)="addListDelete($event)"
-                    (autoDelete)="removeItem($event)"
-                    [itemGenerator]="itemGenerator"
-                    [modoEdicion]="modoEdicion"
-                    class="text-center" [item]=habilidad></app-skill-item>
-                </div>        
+                <app-skill-item
+                (save)="addListSave($event)"
+                (delete)="addListDelete($event)"
+                (autoDelete)="removeItem($event)"
+                [itemGenerator]="itemGenerator"
+                [modoEdicion]="modoEdicion"
+                class="text-center" [item]=habilidad></app-skill-item>
+            </div>        
             </div>
         </div>
     </div>

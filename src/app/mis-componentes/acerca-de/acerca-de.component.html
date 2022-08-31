@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col"></div>
         <div class="col-3 ">
-            <div class="fotoPerfil mx-auto">
+            <div class="fotoPerfil mx-auto user-select-none">
                 <img class="img-height img-thumbnail rounded-circle" [src]="item.img_perfil" alt="Foto de Perfil">
             </div>
             <app-img-edit-btns
@@ -30,7 +30,7 @@
                     [value]="item.titulo"
                     (keyup)="cambiandoTitulo(inputTitulo.value)" name="" id=""></div>
         </div>
-        <div class="col-4">
+        <div class="col-4 user-select-none">
             <div class="espaciadoPerfil"></div>
             <p class="fs-1">Acerca de mi</p>
             <p class="fs-3">{{item.resumenPerfil}}</p>
