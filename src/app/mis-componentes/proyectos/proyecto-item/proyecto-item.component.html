@@ -35,11 +35,12 @@
                     #inputDescripcion
                     [value]="item.descripcion"
                     (keyup)="cambiandoDescripcion(inputDescripcion.value)" name="" id=""></div> 
-            <a target="_blank" href="{{item.link}}">LINK AL PROYECTO</a>
+            <a target="_blank" [href]=item.link>LINK AL PROYECTO</a>
                 <div *ngIf="editando" class="row">
                 <input class="col mb-3 ms-2 me-5 " type="text"
                     #inputLink
                     [value]="item.link"
+                    placeholder="https://www..."
                     (keyup)="cambiandoLink(inputLink.value)" name="" id=""></div> 
         </div>
     </div>
