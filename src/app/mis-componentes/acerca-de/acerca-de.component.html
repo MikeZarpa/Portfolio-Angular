@@ -1,8 +1,4 @@
 <div class="container-fluid position-relative fotoPerfilUbicacion margenInferiorNegativo">
-    <app-header-edit-btns 
-        (edit)="comenzarAEditar()"
-        [onlyEdit]="true"
-        [visible]="modoEdicion&&!editando"></app-header-edit-btns>
     <div class="row">
         <div class="col"></div>
         <div class="col-3 ">
@@ -33,7 +29,17 @@
         </div>
         <div class="col-4 user-select-none">
             <div class="espaciadoPerfil"></div>
-            <p class="fs-1">Acerca de mi</p>
+            <div class="row">
+                <div class="col">
+                    <p class="fs-1">Acerca de mi</p>
+                </div>
+                <div class="col-1 pt-3">
+                    <app-header-edit-btns 
+                    (edit)="comenzarAEditar()"
+                    [onlyEdit]="true"
+                    [visible]="modoEdicion&&!editando"></app-header-edit-btns>
+                </div>
+            </div>
             <p class="fs-3">{{item.resumenPerfil}}</p>
             <div *ngIf="editando" class="row">
                 <input class="col mb-3 ms-2 me-5" type="text"

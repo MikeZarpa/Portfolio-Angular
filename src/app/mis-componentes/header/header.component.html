@@ -26,7 +26,7 @@
 </div>
 <app-login class="" [existe]="mostrarLogin"></app-login>
 <div class="container-fluid banner bg-gradient bg-dark p-0 overflow-hidden position-relative">
-    <div class="position-absolute w-100 top-0 end-0 z-2">        
+    <div class="position-absolute w-100 me-3 mt-3 top-0 end-0 z-2">        
         <!-- Control para entrar al modo edición -->
         <app-header-edit-btns 
             (edit)="comenzarAEditar()"
@@ -42,7 +42,7 @@
             (cancelar)="cancel()"></app-footer-edit-save>
     </div>
     <app-img-edit-btns
-        class="position-absolute z-2"
+        class="position-absolute z-2 ms-3 mt-3"
         [mostrarControles]="editando"
         [ocultarBotones]="ocultarBotonesGuardarImg()"
         [mostrarSpinner]="cargandoImagen()"
