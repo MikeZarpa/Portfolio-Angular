@@ -12,6 +12,7 @@
             <app-img-edit-btns
                 [mostrarControles]="editando"
                 [ocultarBotones]="ocultarBotonesGuardarImg()"
+                [mostrarSpinner]="cargandoImagen()"
                 (inputChange)="catchFileEvent($event)"
                 (cargar)="onCargarImg()"
                 (cancelar)="onCancelarImg()"

@@ -9,6 +9,7 @@ export class ImgEditBtnsComponent implements OnInit {
 
   @Input() mostrarControles=false;
   @Input() ocultarBotones = false;
+  @Input() mostrarSpinner = false;
   @Output() inputChange = new EventEmitter<any>()
   @Output() cargar = new EventEmitter<void>()
   @Output() cancelar = new EventEmitter<void>()

@@ -22,7 +22,8 @@ import { EditBtnComponent } from './mis-componentes/edicion/buttons/edit-btn/edi
 import { FooterEditSaveComponent } from './mis-componentes/edicion/footer-edit-save/footer-edit-save.component';
 import { interceptorProvider } from './mis-servicios/Interceptor/interceptor.service';
 import { ImgEditBtnsComponent } from './mis-componentes/edicion/img-edit-btns/img-edit-btns.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,13 +42,15 @@ import { ImgEditBtnsComponent } from './mis-componentes/edicion/img-edit-btns/im
     DeleteBtnComponent,
     HeaderEditBtnsComponent,
     FooterEditSaveComponent,
-    ImgEditBtnsComponent
+    ImgEditBtnsComponent,
   ],
   imports: [
     //añadimos el modulo HttpClient al array de imports para los servidores
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
   ],
   providers: [interceptorProvider],
   bootstrap: [AppComponent]

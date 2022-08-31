@@ -45,6 +45,7 @@
         class="position-absolute z-2"
         [mostrarControles]="editando"
         [ocultarBotones]="ocultarBotonesGuardarImg()"
+        [mostrarSpinner]="cargandoImagen()"
         (inputChange)="catchFileEvent($event)"
         (cargar)="onCargarImg()"
         (cancelar)="onCancelarImg()"></app-img-edit-btns>

@@ -4,4 +4,7 @@
         <button class="col btn btn-primary" (click)="onCargar()">Cargar</button>
         <button class="col btn btn-secondary" (click)="onCancelar()">Cancelar</button>
     </div>
+    <div class="row" *ngIf="mostrarSpinner">
+        <mat-progress-spinner class="mx-auto" [diameter]="30" mode="indeterminate"></mat-progress-spinner>
+    </div>
 </div>

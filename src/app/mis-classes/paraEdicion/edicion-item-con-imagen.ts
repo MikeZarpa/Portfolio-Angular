@@ -64,11 +64,15 @@ export class EdicionItemConImagen<t extends ComponentItem<t>> extends EdicionIte
     alert("Error al cargar la imagen");
     this.errorUploadImg=true;
   }
+  cargandoImagen(){
+    //Estamos cargando si, se está uploando y no finalizó de alguna manera
+    return this.uploadingImg&&!(this.finishUploadImg||this.errorUploadImg);
+  }
   
   //Control para guardar cambios
    sePuedeGuardar(){
-     return (!this.uploadingImg||this.finishUploadImg||this.errorUploadImg)&&this.HayCambios();
-     //Se puede guardar si: No se está cargando una imagen ó si la carga de la imagen ya finalizó o dio error.
+     return (!this.cargandoImagen()&&this.HayCambios());
+     //Se puede guardar si: No se está cargando una imagen y hay cambios.
   }
   //Si el elemento no tiene dirección de imagen asignada le devuelve la dirección del placeholder
   colocarPlaceHolder(texto:string|null):string{
