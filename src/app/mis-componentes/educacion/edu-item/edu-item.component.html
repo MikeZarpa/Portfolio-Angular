@@ -24,7 +24,7 @@
                     #inputCarrera
                     [value]="item.carreraNombre"
                     (keyup)="cambiandoCarrera(inputCarrera.value)" name="" id=""></div>
-            <p>Lugar {{item.lugarNombre}}</p>
+            <p>Lugar: {{item.lugarNombre}}</p>
             <div *ngIf="editando" class="row">
                 <input class="col mb-3 ms-2 me-5" type="text"
                     #inputLugar

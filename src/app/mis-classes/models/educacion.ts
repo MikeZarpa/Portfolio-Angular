@@ -39,7 +39,7 @@ export class Educacion implements ComponentItem<Educacion> {
             lugarNombre:"Nueva Institución Educativa",
             carreraNombre:"Nuevo Título",
             periodo:"Nuevo Periodo de cursada.",
-            img_logo:null,
+            img_logo:"/assets/images/placeholder-img.webp",
             estado:"Estado del Estudio."
             });
     }

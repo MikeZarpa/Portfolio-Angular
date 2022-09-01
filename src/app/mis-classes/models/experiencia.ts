@@ -41,7 +41,7 @@ export class Experiencia implements ComponentItem<Experiencia>{
             puestoNombre:"Nuevo Puesto Ejercido",
             periodo:"Nuevo Periodo Trabajado",
             descripcion:"Nueva descripción de las actividades.",
-            img_logo:""
+            img_logo:"/assets/images/placeholder-img.webp"
         });
     }
 }

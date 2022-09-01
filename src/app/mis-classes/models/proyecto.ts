@@ -40,7 +40,7 @@ export class Proyecto implements ComponentItem<Proyecto> {
             nombre:"Nuevo Proyecto",
             descripcion:"Nueva descripción del Proyecto",
             link:"",
-            img_logo:null
+            img_logo:"/assets/images/placeholder-img.webp"
         });
     }
 }

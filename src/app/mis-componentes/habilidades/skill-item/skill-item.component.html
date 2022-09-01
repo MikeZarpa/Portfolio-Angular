@@ -37,7 +37,7 @@
                 <option value="Soft">Soft</option></select>
             </div>
         <div *ngIf="editando">
-            <button class="btn btn-success m-1 mt-0 " (click)="guardarCambios()">Guardar Cambios</button>
+            <button class="btn btn-success m-1 mt-0 " [disabled]="!HayCambios()" (click)="guardarCambios()">Guardar Cambios</button>
             <button class="btn btn-secondary m-1 mt-0" (click)="cancel()">Cancelar</button>
         </div>        
     </div>
