@@ -8,7 +8,8 @@
             <img class="img-fluid" [src]=item.img_logo alt="Logo de Experiencia">
             <app-img-edit-btns
                 [mostrarControles]="editando"
-                [ocultarBotones]="hayArchivosParaCargar()"
+                [ocultarBotones]="ocultarBotonesGuardarImg()"
+                [mostrarSpinner]="cargandoImagen()"
                 (inputChange)="catchFileEvent($event)"
                 (cargar)="onCargarImg()"
                 (cancelar)="onCancelarImg()"

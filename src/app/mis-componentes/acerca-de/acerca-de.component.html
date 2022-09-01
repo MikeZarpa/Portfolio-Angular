@@ -1,17 +1,14 @@
 <div class="container-fluid position-relative fotoPerfilUbicacion margenInferiorNegativo">
-    <app-header-edit-btns 
-        (edit)="comenzarAEditar()"
-        [onlyEdit]="true"
-        [visible]="modoEdicion&&!editando"></app-header-edit-btns>
     <div class="row">
         <div class="col"></div>
         <div class="col-3 ">
-            <div class="fotoPerfil mx-auto">
-                <img class="img-height img-thumbnail rounded-circle" [src]="item.img_perfil" alt="Foto de Perfil">
+            <div class="fotoPerfil mx-auto user-select-none bg-dark  rounded-circle">
+                <img class="img-height fotoPerfil img-thumbnail rounded-circle" [src]="item.img_perfil" alt="Foto de Perfil">
             </div>
             <app-img-edit-btns
                 [mostrarControles]="editando"
-                [ocultarBotones]="hayArchivosParaCargar()"
+                [ocultarBotones]="ocultarBotonesGuardarImg()"
+                [mostrarSpinner]="cargandoImagen()"
                 (inputChange)="catchFileEvent($event)"
                 (cargar)="onCargarImg()"
                 (cancelar)="onCancelarImg()"
@@ -30,9 +27,19 @@
                     [value]="item.titulo"
                     (keyup)="cambiandoTitulo(inputTitulo.value)" name="" id=""></div>
         </div>
-        <div class="col-4">
+        <div class="col-4 user-select-none">
             <div class="espaciadoPerfil"></div>
-            <p class="fs-1">Sobre mi</p>
+            <div class="row">
+                <div class="col">
+                    <p class="fs-1">Acerca de mi</p>
+                </div>
+                <div class="col-1 pt-3">
+                    <app-header-edit-btns 
+                    (edit)="comenzarAEditar()"
+                    [onlyEdit]="true"
+                    [visible]="modoEdicion&&!editando"></app-header-edit-btns>
+                </div>
+            </div>
             <p class="fs-3">{{item.resumenPerfil}}</p>
             <div *ngIf="editando" class="row">
                 <input class="col mb-3 ms-2 me-5" type="text"
@@ -45,8 +52,8 @@
     <app-footer-edit-save
         [visible]="modoEdicion"
         [onlySaveAndCancel]="true"
-        [saveDisable]="!sePuedeGuardar()"
-        [visibleSave]="hayCambiosQueGuardar()"
+        [saveDisable]="desactivarGuardar()"
+        [visibleSave]="editando"
         (guardar)="saveUsuario()"
         (cancelar)="cancel()"></app-footer-edit-save>
 </div>

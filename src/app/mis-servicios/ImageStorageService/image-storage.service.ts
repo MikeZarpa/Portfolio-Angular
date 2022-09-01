@@ -27,23 +27,12 @@ export class ImageStorageService {
 
   private async subirImagen(nombreImg: string, imgBase64: any):Promise<string|null>{
     try {
-      const respuesta = await this.storareRef.child("/ImagenesPortfolio/" + nombreImg).putString(imgBase64, 'data_url');      
-      console.log(respuesta);
+      const respuesta = await this.storareRef.child("/ImagenesPortfolio/" + nombreImg).putString(imgBase64, 'data_url');
       //Esperamos que nos devuelva una dirección de descarga (es una promesa).
       return await respuesta.ref.getDownloadURL();
     } catch (err) {
-      console.log("Error al subir la imagen");      
-      console.log(err);
+      alert("Error al subir la imagen");
       return null;
-    }    
-  }
-
-  subirImagen2(nombreCarpeta:string,nombreImg: string, imgBase64: any):void{
-    try {
-      //Con esto ya se sube
-      const respuesta =  this.storareRef.child("/ImagenesPortfolio/"+nombreCarpeta+"/" + nombreImg).putString(imgBase64, 'data_url');
-    } catch (err) {
-      console.log("Error al subir la imagen");
     }    
   }
 
@@ -54,7 +43,6 @@ export class ImageStorageService {
 
     reader.readAsDataURL(imgFile[0]);
     reader.onloadend = () => {
-      //console.log(reader.result);
       return this.subirImagen(nombreImg + '_' + Date.now(), reader.result)
     };
   }

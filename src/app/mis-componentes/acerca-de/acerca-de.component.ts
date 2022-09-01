@@ -27,8 +27,13 @@ export class AcercaDeComponent extends EdicionItemConImagen<Usuario> implements 
     this.item.resumenPerfil=text;
   }
   hayCambiosQueGuardar():boolean{
-    if(this.editando) return JSON.stringify(this.itemTemp)!=JSON.stringify(this.item);
+    if(this.editando) {
+      return (JSON.stringify(this.itemTemp.img_perfil)!=JSON.stringify(this.item.img_perfil)||JSON.stringify(this.itemTemp.nombre)!=JSON.stringify(this.item.nombre)||JSON.stringify(this.itemTemp.titulo)!=JSON.stringify(this.item.titulo)||JSON.stringify(this.itemTemp.resumenPerfil)!=JSON.stringify(this.item.resumenPerfil));
+    }
     return false;
+  }
+  desactivarGuardar(){
+    return !(this.sePuedeGuardar() && this.hayCambiosQueGuardar())
   }
 
   saveUsuario(){

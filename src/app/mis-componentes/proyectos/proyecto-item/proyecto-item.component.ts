@@ -33,4 +33,8 @@ export class ProyectoItemComponent extends EdicionItemConImagen<Proyecto> implem
     super.cargarUrlImg(url);
     this.item.img_logo=url;
   }
+  mostrar(){
+    console.log(JSON.stringify(this.item))
+    console.log(JSON.stringify(this.itemTemp));    
+  }
 }

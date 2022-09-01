@@ -41,8 +41,7 @@ export class PerfilService extends DatosDeConexion {
   }
   //Inicializar para que conserven las propiedades
   public obtenerUsuarioInicializado():UsuarioDTO{
-    this.obtenerUsuario().subscribe(res=>{console.log(res);
-    this.usuarioDTO.inicializarTodoDesdeDTO(res);});
+    this.obtenerUsuario().subscribe(res=>{this.usuarioDTO.inicializarTodoDesdeDTO(res);});
     return this.usuarioDTO;
   }
 

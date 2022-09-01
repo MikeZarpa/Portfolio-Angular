@@ -39,9 +39,9 @@ export class Experiencia implements ComponentItem<Experiencia>{
             id:null,
             lugarNombre:"Nuevo Lugar de Experiencia",
             puestoNombre:"Nuevo Puesto Ejercido",
-            periodo:"Nuevo Periodo",
+            periodo:"Nuevo Periodo Trabajado",
             descripcion:"Nueva descripción de las actividades.",
-            img_logo:""
+            img_logo:"/assets/images/placeholder-img.webp"
         });
     }
 }

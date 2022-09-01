@@ -9,7 +9,8 @@
             <img class="img-fluid" [src]=item.img_logo alt="Logo de Educación">
             <app-img-edit-btns
                 [mostrarControles]="editando"
-                [ocultarBotones]="hayArchivosParaCargar()"
+                [ocultarBotones]="ocultarBotonesGuardarImg()"
+                [mostrarSpinner]="cargandoImagen()"
                 (inputChange)="catchFileEvent($event)"
                 (cargar)="onCargarImg()"
                 (cancelar)="onCancelarImg()"
@@ -23,7 +24,7 @@
                     #inputCarrera
                     [value]="item.carreraNombre"
                     (keyup)="cambiandoCarrera(inputCarrera.value)" name="" id=""></div>
-            <p>Lugar {{item.lugarNombre}}</p>
+            <p>Lugar: {{item.lugarNombre}}</p>
             <div *ngIf="editando" class="row">
                 <input class="col mb-3 ms-2 me-5" type="text"
                     #inputLugar
