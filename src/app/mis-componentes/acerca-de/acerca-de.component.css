@@ -4,11 +4,49 @@
     width: var(--size);
 }
 .fotoPerfilUbicacion{
-    top: -7rem;
+    --sizeDesplazamiento:-7rem;
+    top: var(--sizeDesplazamiento);
 }
 .espaciadoPerfil{
     height: 7rem;
 }
 .margenInferiorNegativo{
     margin-bottom: -5rem;
+}
+
+@media only screen and (max-width: 1023px){
+    .fotoPerfil{
+        --size:11rem;
+    }
+    .fotoPerfilUbicacion{
+        --sizeDesplazamiento:-5rem;
+    }
+}
+@media only screen and (max-width: 767px){
+    .espaciadoPerfil{
+        height: 0rem;
+    }
+    .fotoPerfil{
+        --size:12rem;
+    }
+    .fotoPerfilUbicacion{
+        --sizeDesplazamiento:-6rem;
+    }
+}
+
+@media only screen and (max-width: 425px){
+    .fotoPerfil{
+        --size:10rem;
+    }
+    .fotoPerfilUbicacion{
+        --sizeDesplazamiento:-5rem;
+    }
+}
+@media only screen and (max-width: 320px){
+    .fotoPerfil{
+        --size:8rem;
+    }
+    .fotoPerfilUbicacion{
+        --sizeDesplazamiento:-4rem;
+    }
 }
