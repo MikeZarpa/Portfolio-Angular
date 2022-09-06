@@ -1,12 +1,12 @@
-<div class="container-fluid navegacion bg-light user-select-none position-relative z-2">
+<div class="container-fluid navegacion bg-light user-select-none position-relative">
     <button (click)="mostrarMenu()" class="btn btn-dark mostrarMenu">Menu</button>
     <div class="row row-cols-1 h-100 menu" id="navBar">
         <div class="col col-md-6 col-xl-4 h-100 align-items-center">
             <div class="row row-cols-3 h-100 align-items-center">
-                <div class="h-100 col-4 float-end pr-0">
+                <div class="h-100 col-5 col-md-4 float-end pr-0">
                     <img class="p-1 h-100" src="/assets/images/icons/arg-programa.png" alt="Logo de Argentina Programa">
                 </div>
-                <div class="col-8 align-items-center p-0">
+                <div class="col-7 col-md-8 align-items-center p-0">
                     <p class="m-0 text-center text-md-start">Argentina Programa-#YoProgramo</p>
                 </div>
             </div>
@@ -39,7 +39,7 @@
         </div>        
     </div>    
 </div>
-<app-login class="" [existe]="mostrarLogin"></app-login>
+<app-login class="" (cerrar)="mostrarLogin=!mostrarLogin;mostrarMenu()" [existe]="mostrarLogin"></app-login>
 
 <div class="container-fluid banner bg-gradient bg-dark p-0 overflow-hidden position-relative">
     <div class="position-absolute w-100 me-3 mt-3 top-0 end-0 z-2">        

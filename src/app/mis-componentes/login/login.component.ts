@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DatosLogin } from 'src/app/mis-classes/modelsDTO/datos-login';
 import { TokenService } from 'src/app/mis-servicios/TokenService/token.service';
 
@@ -10,6 +10,7 @@ import { TokenService } from 'src/app/mis-servicios/TokenService/token.service';
 export class LoginComponent implements OnInit {
 
   @Input() existe:boolean=true;
+  @Output("cerrar") cerrarEvent = new EventEmitter<void>()
   datosLogin:DatosLogin=new DatosLogin();
   constructor(private tokenService:TokenService) { }
 
@@ -24,5 +25,8 @@ export class LoginComponent implements OnInit {
   }
   changePass(texto:string){
     this.datosLogin.password=texto;
+  }
+  cerrar(){
+    this.cerrarEvent.emit()
   }
 }

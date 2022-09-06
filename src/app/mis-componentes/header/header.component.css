@@ -1,5 +1,6 @@
 .navegacion{
     height: 50px;
+    z-index: 2;
 }
 .banner{
     max-height: 300px;
@@ -16,18 +17,19 @@
 }
 @media only screen and (max-width: 767px){
     .menu{
+        top:50px;
         position: relative;
         width: 400px;
         max-width: 100%;
         box-sizing: border-box;
-        /*left: -400px;*/
         left: -400px;
         background: #212529;
         color: white;
-        height:200px !important;
+        height:330px !important;
+        z-index: 1;
     }
     .menu > .col {
-        height: 30% !important;
+        height: 20% !important;
         margin: 2px auto;
     }
     .mostrarMenu{
@@ -35,6 +37,9 @@
         right: 0.5em;
         top: 0.5em;
         z-index: 4;
+    }
+    .navegacion{
+        z-index: 1;
     }
     .entrada-lateral{
         animation-name: deslizar-derecha;

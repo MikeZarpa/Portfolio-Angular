@@ -17,3 +17,10 @@
     from {top: -330px;}
     to {top: 50px;}
 }
+
+
+@media only screen and (min-width:768px) {
+    .btnCerrar{
+        display: none;
+    }
+}
