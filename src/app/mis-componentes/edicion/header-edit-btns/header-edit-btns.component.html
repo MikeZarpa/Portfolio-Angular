@@ -1,4 +1,4 @@
-<div class="d-flex">
+<div *ngIf="visible" class="d-flex">
     <app-edit-btn class="ms-auto" (onClick)="editItem()" [visible]=visible></app-edit-btn>
     <app-delete-btn (onClick)="deleteItem()" [visible]=visible&&!onlyEdit></app-delete-btn>
 </div>
