@@ -50,4 +50,8 @@ export class HeaderComponent extends EdicionItemConImagen<Usuario> implements On
     this.save.emit(this.item);
     this.editando=false;
   }
+  mostrarMenu(){
+    const navBar = document.getElementById("navBar");
+    navBar?.classList.toggle("entrada-lateral");
+  }
 }

@@ -3,9 +3,9 @@
             (edit)="comenzarAEditar()"
             (delete)="borrar()"
             [visible]="modoEdicion&&!editando"></app-header-edit-btns>
-    <div class="row">
-        <div class="offset-1 col-2 h-100 d-flex flex-column overflow-hidden">
-            <img class="img-fluid" [src]=item.img_logo alt="Logo de Experiencia">
+    <div class="row row-cols-1">
+        <div class="offset-md-1 col-md-2 h-100 d-flex flex-column overflow-hidden">
+            <img class="img-fluid responsiveImg" [src]=item.img_logo alt="Logo de Experiencia">
             <app-img-edit-btns
                 [mostrarControles]="editando"
                 [ocultarBotones]="ocultarBotonesGuardarImg()"
@@ -15,7 +15,7 @@
                 (cancelar)="onCancelarImg()"
                 ></app-img-edit-btns>
         </div>
-        <div class="col">
+        <div class="col col-md-8">
             <h3 class="fs-3">{{item.puestoNombre}}</h3>
             <div *ngIf="editando" class="row">
                 <input class="col mb-3 ms-2 me-5" type="text"

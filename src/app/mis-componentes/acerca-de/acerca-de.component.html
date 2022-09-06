@@ -1,7 +1,6 @@
 <div class="container-fluid position-relative fotoPerfilUbicacion margenInferiorNegativo">
-    <div class="row">
-        <div class="col"></div>
-        <div class="col-3 ">
+    <div class="row row-cols-1">
+        <div class="col-md-3 offset-md-2 ">
             <div class="fotoPerfil mx-auto user-select-none bg-dark  rounded-circle">
                 <img class="img-height fotoPerfil img-thumbnail rounded-circle" [src]="item.img_perfil" alt="Foto de Perfil">
             </div>
@@ -27,7 +26,7 @@
                     [value]="item.titulo"
                     (keyup)="cambiandoTitulo(inputTitulo.value)" name="" id=""></div>
         </div>
-        <div class="col-6 user-select-none">
+        <div class="offset-1 col-10 offset-md-0 col-md-6 user-select-none">
             <div class="espaciadoPerfil"></div>
             <div class="row">
                 <div class="col">
@@ -40,14 +39,13 @@
                     [visible]="modoEdicion&&!editando"></app-header-edit-btns>
                 </div>
             </div>
-            <p class="fs-3">{{item.resumenPerfil}}</p>
+            <p class="fs-5">{{item.resumenPerfil}}</p>
             <div *ngIf="editando" class="row">
                 <input class="col mb-3 ms-2 me-5" type="text"
                     #inputResumen
                     [value]="item.resumenPerfil"
                     (keyup)="cambiandoResumen(inputResumen.value)" name="" id=""></div>
         </div>
-        <div class="col"></div>
     </div>
     <app-footer-edit-save
         [visible]="modoEdicion"
