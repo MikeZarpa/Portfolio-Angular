@@ -4,3 +4,48 @@
 .banner{
     height: 400px;
 }
+
+/*Creamos nuestros breakpoints*/
+@media only screen and (min-width:993px) and (max-width: 1200px){
+    
+}
+@media only screen and (min-width:768px){
+    .mostrarMenu{
+        display: none;
+    }
+}
+@media only screen and (max-width: 767px){
+    .menu{
+        position: relative;
+        width: 400px;
+        max-width: 100%;
+        box-sizing: border-box;
+        /*left: -400px;*/
+        left: -400px;
+        background: #212529;
+        color: white;
+        height:200px !important;
+    }
+    .menu > .col {
+        height: 30% !important;
+        margin: 2px auto;
+    }
+    .mostrarMenu{
+        position: absolute;
+        right: 0.5em;
+        top: 0.5em;
+        z-index: 4;
+    }
+    .entrada-lateral{
+        animation-name: deslizar-derecha;
+        animation-delay: 0s;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;}    
+    
+    @keyframes deslizar-derecha{
+        from {left: -400px;}
+        to {left: 0;}
+    }
+}
+@media only screen and (max-width: 576px){
+}
